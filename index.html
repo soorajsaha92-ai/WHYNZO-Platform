@@ -32,11 +32,31 @@ header{position:sticky;top:0;z-index:100;background:#fffffff2;backdrop-filter:bl
 footer{background:#06152f;color:#9fb4d3;padding:25px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
 .reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
 @media(max-width:1100px){.links{display:none}.search{display:none}.heroGrid{grid-template-columns:1fr}.heroVisual{display:grid;height:390px;margin-top:-25px;transform:scale(.9)}.heroStats{display:none}.skills{grid-template-columns:repeat(6,1fr)}.how,.aiGrid{grid-template-columns:1fr}}
-@media(max-width:650px){.wrap{padding:0 15px}.nav{height:64px;gap:6px}.brandImg{width:145px;height:48px}.lang{display:none}.nav .btn{padding:8px 9px;font-size:10px}.heroCopy{padding:42px 0 8px}.hero h1{font-size:45px;letter-spacing:-2px}.heroSub{font-size:16px}.heroVisual{height:285px;margin-top:-8px;transform:scale(.82);transform-origin:center top}.globe{width:280px;height:280px}.orbit{width:410px;height:130px}.trainerOrb{width:135px;height:175px;right:16%;bottom:40px}.trainerOrb:before{width:82px;height:82px;left:27px;top:-19px}.trainerOrb:after{left:31px;font-size:8px}.floatCard{font-size:10px;padding:9px 11px}.fc1{top:20px;right:1%}.fc2{left:0;bottom:75px}.fc3{right:2%;bottom:25px}.skills{display:flex;overflow:auto}.skill{min-width:105px}.steps{grid-template-columns:1fr 1fr}.aiPanel{grid-template-columns:1fr}.aiPerson{height:210px}.bottomGrid{flex-direction:column;align-items:flex-start}}
+@media(max-width:650px){.wrap{padding:0 15px}.nav{height:64px;gap:6px}.brandImg{width:172px;height:50px}.lang{display:none}.nav .btn{padding:8px 9px;font-size:10px}.heroCopy{padding:42px 0 8px}.hero h1{font-size:45px;letter-spacing:-2px}.heroSub{font-size:16px}.heroVisual{height:285px;margin-top:-8px;transform:scale(.82);transform-origin:center top}.globe{width:280px;height:280px}.orbit{width:410px;height:130px}.trainerOrb{width:135px;height:175px;right:16%;bottom:40px}.trainerOrb:before{width:82px;height:82px;left:27px;top:-19px}.trainerOrb:after{left:31px;font-size:8px}.floatCard{font-size:10px;padding:9px 11px}.fc1{top:20px;right:1%}.fc2{left:0;bottom:75px}.fc3{right:2%;bottom:25px}.skills{display:flex;overflow:auto}.skill{min-width:105px}.steps{grid-template-columns:1fr 1fr}.aiPanel{grid-template-columns:1fr}.aiPerson{height:210px}.bottomGrid{flex-direction:column;align-items:flex-start}}
 
 .heroVisual:after{content:"ANY SKILL • ANY JOB • ANY COUNTRY";position:absolute;bottom:22px;left:50%;transform:translateX(-50%);padding:9px 15px;border:1px solid #8cecff55;border-radius:30px;background:#05285bb8;color:#c9f8ff;font-size:10px;font-weight:900;letter-spacing:.08em;white-space:nowrap}
 .skillPic{transition:transform .25s}.skill:hover .skillPic{transform:scale(1.06) rotate(-2deg)}
 .country{cursor:pointer}.country.selected{background:#087cff;color:#fff}
+
+.heroVisual{position:relative!important;isolation:isolate}
+.heroVisual .glow{z-index:1}
+.heroVisual .globe{z-index:3}
+.heroVisual .orbit{z-index:4}
+.heroVisual .trainerOrb{z-index:5}
+.heroVisual .floatCard{z-index:7}
+.heroVisual .heroStats{z-index:8}
+.heroVisual .city{z-index:2;pointer-events:none}
+.heroVisual:after{z-index:9}
+@media(max-width:1100px){
+ .heroVisual{display:grid!important;visibility:visible!important;opacity:1!important;height:370px!important;margin-top:-5px!important}
+ .heroVisual .globe{display:block!important}
+}
+@media(max-width:650px){
+ .heroVisual{height:305px!important;display:grid!important;visibility:visible!important;opacity:1!important}
+ .heroVisual .globe{width:255px;height:255px}
+ .heroVisual .orbit{width:390px;height:125px}
+ .heroVisual .trainerOrb{display:block!important}
+}
 </style>
 </head>
 <body>
@@ -49,7 +69,7 @@ footer{background:#06152f;color:#9fb4d3;padding:25px 0;font-size:12px}.foot{disp
 <div class="heroCopy reveal"><div class="eyebrow"><i class="dot"></i> GLOBAL AI-POWERED OCCUPATIONAL TRAINING</div><h1>Your <span>Global</span><br>Skill Training<br><span>Partner.</span></h1><div class="heroSub">Learn from Real-Like AI Trainers for <b>Any Skill, Any Job, Any Country.</b></div>
 <div class="heroBtns"><a class="btn primary" href="#trainer">Start Learning Free →</a><a class="btn ghost" href="#how">▶ Watch How It Works</a></div>
 <div class="micro"><div>🗣️ <b>Talk</b>with AI Trainers</div><div>▶ <b>Watch</b>Real Demonstrations</div><div>⚙ <b>Practice</b>Real Scenarios</div><div>✓ <b>Improve</b>with Feedback</div><div>🎓 <b>Grow</b>Job-Ready Skills</div></div></div>
-<div class="heroVisual"><div class="glow"></div><div class="globe"></div><div class="orbit"><i></i></div><div class="trainerOrb"></div><div class="floatCard fc1">👩‍🏫 Hi! I'm Aisha<br><small>Your AI Trainer.</small></div><div class="floatCard fc2">🌍 Any Skill<br>Any Country<br>A Brighter You</div><div class="floatCard fc3">🤖 AI Trainers • 24/7</div><div class="heroStats"><div><b>200+</b><span>Occupations</span></div><div><b>50+</b><span>Countries</span></div><div><b>20+</b><span>Languages</span></div><div><b>24/7</b><span>AI Trainers</span></div><div><b>1M+</b><span>Learners Goal</span></div></div><div class="city"></div></div>
+<div class="heroVisual"><div class="glow"></div><div style="position:absolute;z-index:6;top:28px;left:8%;padding:9px 13px;border-radius:20px;background:#ffffff18;border:1px solid #ffffff3d;color:#dffaff;font-size:11px;font-weight:900;backdrop-filter:blur(8px)">🌍 GLOBAL LEARNING</div><div class="globe"></div><div class="orbit"><i></i></div><div class="trainerOrb"></div><div class="floatCard fc1">👩‍🏫 Hi! I'm Aisha<br><small>Your AI Trainer.</small></div><div class="floatCard fc2">🌍 Any Skill<br>Any Country<br>A Brighter You</div><div class="floatCard fc3">🤖 AI Trainers • 24/7</div><div class="heroStats"><div><b>200+</b><span>Occupations</span></div><div><b>50+</b><span>Countries</span></div><div><b>20+</b><span>Languages</span></div><div><b>24/7</b><span>AI Trainers</span></div><div><b>1M+</b><span>Learners Goal</span></div></div><div class="city"></div></div>
 </div></section>
 <section class="section reveal" id="skills"><div class="wrap"><div class="titleRow"><h2>Choose Your Skill</h2><a class="view" href="#">View All →</a></div><div class="chips"><span class="chip active">All</span><span class="chip">♙ Business</span><span class="chip">⚕ Healthcare</span><span class="chip">▣ IT & Tech</span><span class="chip">⚒ Skilled Trades</span><span class="chip">♨ Hospitality</span><span class="chip">▣ Transport</span><span class="chip">▤ Government</span><span class="chip">◉ Beauty & Wellness</span><span class="chip">More</span></div>
 <div class="skills"><div class="skill"><div class="skillPic">💼</div><b>Sales</b></div><div class="skill"><div class="skillPic">🩺</div><b>Healthcare</b></div><div class="skill"><div class="skillPic">💻</div><b>IT Support</b></div><div class="skill"><div class="skillPic">🚗</div><b>Driver</b></div><div class="skill"><div class="skillPic">🔧</div><b>Plumber</b></div><div class="skill"><div class="skillPic">⚡</div><b>Electrician</b></div><div class="skill"><div class="skillPic">👨‍🍳</div><b>Chef</b></div><div class="skill"><div class="skillPic">🏗️</div><b>Construction</b></div><div class="skill"><div class="skillPic">📊</div><b>Accounting</b></div><div class="skill"><div class="skillPic">💇</div><b>Beauty & Wellness</b></div><div class="skill"><div class="skillPic">🏨</div><b>Hospitality</b></div><div class="skill"><div class="skillPic">🌾</div><b>Agriculture</b></div></div></div></section>
