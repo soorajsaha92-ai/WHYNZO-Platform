@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WHYNZO — Training Engine</title>
+<style>
+:root{--navy:#062b5e;--blue:#087cf0;--cyan:#14c9f5;--bg:#f4f8fd;--ink:#102d50;--muted:#6a7c91;--line:#dbe7f2;--card:#fff;--good:#12ad83;--warn:#f59e0b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,select{font:inherit}button{cursor:pointer}
+header{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 24px;gap:20px;position:sticky;top:0;z-index:10}
+.logo{font-size:19px;font-weight:950;color:#07346e}.logo b{color:#09aef0}.logo small{display:block;font-size:6px;letter-spacing:1.4px;color:#77879b;margin-top:-2px}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:10px}.pill{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:12px;font-weight:800}
+main{max-width:1180px;margin:auto;padding:25px}
+.crumb{font-size:11px;color:#73859a;font-weight:800;margin-bottom:12px}.crumb b{color:#087cf0}
+.topline{display:flex;justify-content:space-between;align-items:flex-end;gap:20px}.topline h1{font-size:30px;margin:0 0 7px}.topline p{margin:0;color:var(--muted)}
+.progress{min-width:220px}.progress-top{display:flex;justify-content:space-between;font-size:11px;font-weight:850;margin-bottom:7px}.bar{height:8px;background:#e3ebf4;border-radius:99px;overflow:hidden}.bar i{display:block;width:38%;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px}
+.grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.55fr);gap:18px;margin-top:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 30px #123b6510;padding:21px}.lesson{background:linear-gradient(135deg,#062c60,#0b5fae);color:#fff;min-height:460px;position:relative;overflow:hidden}.lesson:before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;right:-130px;top:-120px;background:#1ac8f533;filter:blur(4px)}
+.badge{display:inline-block;padding:6px 9px;border-radius:99px;background:#ffffff18;border:1px solid #ffffff25;color:#bff4ff;font-size:10px;font-weight:900;letter-spacing:.8px}.lesson h2{font-size:26px;margin:13px 0 7px;position:relative}.lesson .intro{color:#d6e7f9;font-size:13px;max-width:690px;position:relative}
+.demo{margin-top:20px;border:1px solid #ffffff20;background:#ffffff0d;border-radius:15px;padding:18px;position:relative}.demo-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.demo h3{margin:0;font-size:17px}.demo small{color:#c4d9ee}.visual{height:150px;margin-top:14px;border-radius:12px;background:linear-gradient(145deg,#0a4d8f,#061f49);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.wire{width:210px;height:8px;background:#f2c14e;border-radius:5px;box-shadow:0 0 0 5px #f2c14e22}.meter{width:70px;height:90px;border-radius:9px;background:#eef6ff;position:absolute;right:28%;box-shadow:0 10px 25px #0004}.meter:after{content:"SAFE";position:absolute;left:12px;top:14px;color:#087cf0;font-weight:950;font-size:11px}.glove{width:48px;height:48px;border-radius:50%;background:#16b9ef;position:absolute;left:26%;bottom:33px}
+.demo-controls{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.ghost{border:1px solid #ffffff35;background:#ffffff10;color:#fff;border-radius:10px;padding:9px 12px;font-weight:850;font-size:11px}.next{border:0;background:linear-gradient(90deg,#08a7f1,#15cef3);color:#fff;border-radius:10px;padding:10px 15px;font-weight:900;font-size:11px}
+.ai{display:flex;gap:13px;align-items:flex-start;margin-top:17px;padding:13px;border-radius:13px;background:#ffffff0d;border:1px solid #ffffff18}.ai-face{width:52px;height:52px;border-radius:50%;background:linear-gradient(145deg,#f4b59a,#ffd6c1);position:relative;flex:0 0 auto}.ai-face:before{content:"";position:absolute;width:36px;height:25px;left:8px;top:3px;border-radius:50% 50% 40% 40%;background:#3a2841}.ai-face:after{content:"";position:absolute;width:5px;height:5px;left:23px;top:29px;border-radius:50%;background:#fff;box-shadow:-9px 0 #28364b,9px 0 #28364b}.ai strong{font-size:12px}.ai p{margin:4px 0 0;color:#d5e6f7;font-size:11px;line-height:1.45}
+.side h3{margin:0 0 5px;font-size:17px}.side p{font-size:11px;color:var(--muted);margin:0 0 14px}.side .select{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:9px;color:#29445f}
+.checklist{display:grid;gap:8px;margin-top:16px}.check{display:flex;gap:9px;align-items:center;padding:10px;border-radius:10px;background:#f8fbff;border:1px solid var(--line);font-size:11px}.check i{width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:#e6f7f2;color:#0a9e78;font-style:normal;font-weight:900}.check.lock i{background:#edf1f5;color:#8c9aab}
+.practice{margin-top:18px}.practice h2{margin:0;font-size:20px}.scenario{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}.choice{padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left}.choice:hover{border-color:#6acaf5;background:#f3fbff}.choice b{display:block;font-size:12px}.choice span{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.feedback{margin-top:12px;padding:12px;border-radius:11px;background:#effaf7;border:1px solid #bfeadf;color:#137b63;font-size:11px;display:none}
+@media(max-width:850px){header{height:62px;padding:0 14px}.header-right .pill:first-child{display:none}main{padding:17px 13px}.topline{display:block}.progress{margin-top:15px}.grid{grid-template-columns:1fr}.lesson{min-height:auto}.visual{height:125px}.scenario{grid-template-columns:1fr 1fr}}
+@media(max-width:430px){.topline h1{font-size:26px}.demo-head{display:block}.demo-head small{display:block;margin-top:5px}.scenario{grid-template-columns:1fr}.lesson{padding:17px}.card{padding:17px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">WHYNZO<b>JOBS</b><small>LEARN • PRACTICE • PROVE</small></div>
+ <div class="header-right"><button class="pill">Electrician</button><button class="pill">Hindi</button><button class="pill">Save progress</button></div>
+</header>
+<main>
+ <div class="crumb">My Training / Electrician / Module 2 / <b>Lesson 3</b></div>
+ <div class="topline">
+  <div><h1>Safe testing before electrical work</h1><p>Electrician • Beginner • Germany • Learn in Hindi • Practice workplace German</p></div>
+  <div class="progress"><div class="progress-top"><span>Module progress</span><span>38%</span></div><div class="bar"><i></i></div></div>
+ </div>
+
+ <div class="grid">
+  <section>
+   <div class="card lesson">
+    <span class="badge">LESSON 3 • PRACTICAL</span>
+    <h2>Check before you touch.</h2>
+    <p class="intro">Learn the safe sequence for checking that a circuit is de-energised before work. Follow the training demonstration first, then try the decision scenario.</p>
+    <div class="demo">
+     <div class="demo-head"><div><h3>Visual demonstration</h3><small>See it → understand it → try it</small></div><span class="badge">02:14</span></div>
+     <div class="visual"><div class="wire"></div><div class="meter"></div><div class="glove"></div></div>
+     <div class="demo-controls"><button class="ghost" id="play">▶ Play demonstration</button><button class="ghost" id="repeat">↻ Explain again</button><button class="next" id="next">I'm ready to practise →</button></div>
+    </div>
+    <div class="ai">
+      <div class="ai-face"></div><div><strong>Aisha • AI Trainer</strong><p>“I'll explain this twice: first in Hindi, then using the German workplace terms you may hear on the job.”</p></div>
+    </div>
+   </div>
+
+   <div class="card practice">
+    <h2>Reality Mode: what do you do next?</h2>
+    <p class="sub">A colleague asks you to start work. The circuit status has not been verified yet.</p>
+    <div class="scenario">
+      <button class="choice" data-good="0"><b>Start the work immediately</b><span>The colleague says the power was switched off.</span></button>
+      <button class="choice" data-good="1"><b>Verify isolation and test before touching</b><span>Follow the safe procedure even if someone says it is off.</span></button>
+      <button class="choice" data-good="0"><b>Ask the customer to confirm</b><span>Customer confirmation is not a technical verification.</span></button>
+      <button class="choice" data-good="0"><b>Skip the check for a quick job</b><span>Time pressure does not remove the safety step.</span></button>
+    </div>
+    <div class="feedback" id="feedback"></div>
+   </div>
+  </section>
+
+  <aside>
+   <div class="card">
+    <h3>Your training settings</h3><p>These settings shape the lesson experience.</p>
+    <select class="select"><option>Electrician</option><option>Plumber</option><option>Driver</option><option>Chef</option></select>
+    <select class="select"><option>Germany</option><option>India</option><option>UAE</option><option>UK</option></select>
+    <select class="select"><option>Hindi — learning</option><option>English — learning</option><option>Marathi — learning</option></select>
+    <select class="select"><option>German — workplace</option><option>English — workplace</option></select>
+   </div>
+   <div class="card" style="margin-top:14px">
+    <h3>Lesson checklist</h3>
+    <div class="checklist">
+     <div class="check"><i>✓</i> Hazard identification</div>
+     <div class="check"><i>✓</i> PPE and isolation</div>
+     <div class="check"><i>→</i> Safe testing</div>
+     <div class="check lock"><i>4</i> Reality Mode</div>
+     <div class="check lock"><i>5</i> Assessment</div>
+    </div>
+   </div>
+  </aside>
+ </div>
+</main>
+<script>
+document.getElementById('play').onclick=()=>{document.getElementById('play').textContent='⏸ Demonstration playing…';setTimeout(()=>document.getElementById('play').textContent='▶ Replay demonstration',2200)};
+document.getElementById('repeat').onclick=()=>alert('Aisha will repeat the explanation in the selected learning language. This prototype does not use an external AI API.');
+document.getElementById('next').onclick=()=>document.querySelector('.practice').scrollIntoView({behavior:'smooth'});
+document.querySelectorAll('.choice').forEach(c=>c.onclick=()=>{
+ const f=document.getElementById('feedback'); f.style.display='block';
+ if(c.dataset.good==='1'){f.textContent='Correct training decision. Verify isolation and test before touching. In a production version, this step would unlock the next practice activity.';f.style.background='#effaf7';f.style.color='#137b63'}
+ else{f.textContent='Not the safe training decision. Recheck the procedure and try again.';f.style.background='#fff7e8';f.style.color='#a35d00'}
+});
+</script>
+</body>
+</html>
