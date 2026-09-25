@@ -3,108 +3,168 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="WHYNZOJOBS — Learn. Practice. Prove. AI-powered occupational training for skills, jobs and countries.">
-<title>WHYNZOJOBS — Learn. Practice. Prove.</title>
+<title>WHYNZOJOBS — Global Skill Training</title>
 <style>
-:root{--bg:#07111f;--panel:#0d1b2d;--panel2:#11243a;--line:#203653;--text:#f5f8ff;--muted:#9fb0c7;--cyan:#19d3ff;--blue:#4d7cff;--purple:#a855f7;--green:#38d996;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:
-radial-gradient(circle at 10% 5%,rgba(25,211,255,.16),transparent 28%),
-radial-gradient(circle at 90% 10%,rgba(168,85,247,.15),transparent 30%),var(--bg)}
-a{color:inherit;text-decoration:none}.wrap{max-width:1220px;margin:auto;padding:0 22px}
-header{position:sticky;top:0;z-index:10;background:rgba(7,17,31,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(32,54,83,.65)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:950}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:25px;font-weight:1000;background:linear-gradient(135deg,var(--blue),var(--cyan),var(--purple));box-shadow:0 0 30px rgba(25,211,255,.2)}
-.navlinks{display:flex;gap:22px;color:#b9c8dc;font-size:14px}.navlinks a:hover{color:white}.navbtns{display:flex;gap:8px}button{font:inherit;cursor:pointer}.btn{border:1px solid var(--line);border-radius:12px;padding:11px 15px;font-weight:800;background:#13253d;color:white}.btn.primary{border:0;background:linear-gradient(90deg,var(--blue),var(--cyan))}
-.hero{padding:80px 0 60px;min-height:610px;display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}.eyebrow{display:inline-block;padding:8px 12px;border:1px solid #245276;border-radius:999px;color:#8cecff;background:#0b263c;font-size:12px;font-weight:800}.hero h1{font-size:clamp(44px,6vw,76px);line-height:.98;margin:18px 0}.grad{background:linear-gradient(90deg,#fff,var(--cyan),#c08cff);-webkit-background-clip:text;color:transparent}.hero p{font-size:18px;line-height:1.65;color:var(--muted);max-width:720px}.cta{display:flex;gap:12px;margin-top:25px;flex-wrap:wrap}.heroVisual{min-height:450px;border:1px solid var(--line);border-radius:34px;background:linear-gradient(145deg,#102b46,#0c1828);position:relative;overflow:hidden;display:grid;place-items:center}.globe{width:280px;height:280px;border-radius:50%;border:1px solid #56dcff88;box-shadow:0 0 80px #19d3ff33,inset 0 0 50px #19d3ff22;background:radial-gradient(circle at 35% 30%,#244c77,#07111f 68%)}.orbit{position:absolute;width:370px;height:140px;border:2px solid #19d3ff88;border-radius:50%;transform:rotate(-18deg)}.float{position:absolute;padding:11px 14px;border:1px solid var(--line);background:#10243aee;border-radius:14px;font-size:13px}.f1{top:55px;left:35px}.f2{top:90px;right:25px}.f3{bottom:80px;left:30px}.f4{bottom:45px;right:35px}
-section{padding:72px 0}.sectionHead{max-width:760px;margin-bottom:28px}.sectionHead h2{font-size:38px;margin:0 0 10px}.sectionHead p{color:var(--muted);line-height:1.6}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:rgba(13,27,45,.9);border:1px solid var(--line);border-radius:22px;padding:20px}.card h3{margin:10px 0 8px}.card p{color:var(--muted);line-height:1.55;font-size:14px}.icon{width:44px;height:44px;border-radius:13px;background:#12304a;display:grid;place-items:center;font-size:21px}
-.controls{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}select,input{width:100%;padding:12px;border-radius:11px;border:1px solid #29425f;background:#081729;color:white}.label{font-size:11px;color:#9fb0c7;text-transform:uppercase;letter-spacing:.08em;margin:0 0 7px}
-.trainerGrid{display:grid;grid-template-columns:300px 1fr;gap:16px}.chat{height:390px;overflow:auto;padding:6px}.msg{max-width:82%;padding:12px 14px;border-radius:16px;margin:9px 0;line-height:1.5;font-size:14px}.ai{background:#12243a;border:1px solid #203b59}.user{margin-left:auto;background:#2855a0}.sendrow{display:flex;gap:8px;margin-top:10px}.sendrow input{flex:1}.progress{height:8px;background:#172940;border-radius:10px;margin:14px 0 5px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:.3s}.flow{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:15px}.flow div{padding:9px;border:1px solid var(--line);border-radius:10px;color:#9fb0c7;font-size:11px}.flow .active{border-color:var(--cyan);color:white;background:#12304a}.notice{font-size:11px;color:var(--muted);line-height:1.5}
-.about{display:grid;grid-template-columns:330px 1fr;gap:35px;align-items:center}.photo{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:28px;border:1px solid var(--line);background:#10243a}.aboutBox{padding:28px;border:1px solid var(--line);border-radius:25px;background:#0d1b2d}.aboutBox p{color:var(--muted);line-height:1.7}
-footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:13px}.footerGrid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footerlinks{display:flex;gap:16px;flex-wrap:wrap}
-.modal{position:fixed;inset:0;background:#0009;display:none;place-items:center;z-index:30;padding:20px}.modal.show{display:grid}.modalbox{max-width:500px;width:100%;background:#0d1b2d;border:1px solid var(--line);border-radius:22px;padding:25px}.close{float:right;background:none;color:white;border:0;font-size:22px}.modalbox p{color:var(--muted);line-height:1.5}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.trainerGrid,.about{grid-template-columns:1fr}.about{max-width:700px}.photo{max-width:320px}.navlinks{display:none}.controls{grid-template-columns:1fr}}
-@media(max-width:520px){.cards{grid-template-columns:1fr}.hero{padding-top:55px}.heroVisual{min-height:360px}.globe{width:220px;height:220px}}
+:root{--navy:#071b3d;--blue:#087cff;--cyan:#12c9ff;--purple:#7b3ff2;--ink:#09224a;--muted:#61708b;--bg:#f6f9ff;--white:#fff;--line:#dce6f5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none;color:inherit}
+.wrap{max-width:1450px;margin:auto;padding:0 30px}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 3px 20px #09224a0b}
+.nav{height:70px;display:flex;align-items:center;gap:26px}.brand{display:flex;align-items:center;font-size:25px;font-weight:950;color:#087cff;letter-spacing:-1px}.mark{width:43px;height:43px;border-radius:12px;background:linear-gradient(135deg,#087cff,#19cfff,#743af1);display:grid;place-items:center;color:#fff;margin-right:9px;font-size:24px;font-weight:1000}
+.links{display:flex;gap:25px;margin-left:30px;font-size:14px}.links a:hover{color:#087cff}.spacer{flex:1}.search{width:250px;border:1px solid #cbd7ea;border-radius:22px;padding:10px 15px;color:#74819a}.lang{font-size:13px}.btn{border:1px solid #c8d7ee;border-radius:11px;padding:10px 16px;font-weight:800;background:#fff;color:var(--ink);cursor:pointer}.primary{background:linear-gradient(90deg,#087cff,#13c7ff);border:0;color:#fff}
+.hero{background:linear-gradient(110deg,#06214a 0%,#063a7a 48%,#102c73 100%);color:#fff;overflow:hidden}.heroGrid{min-height:500px;display:grid;grid-template-columns:43% 57%;align-items:center}.hero h1{font-size:clamp(45px,5vw,74px);line-height:.96;margin:0 0 16px;letter-spacing:-2px}.hero h1 span{color:#18c9ff}.hero p{font-size:19px;line-height:1.45;max-width:560px;color:#dbeaff}.heroBtns{display:flex;gap:12px;margin:22px 0}.hero .primary{font-size:16px;padding:14px 22px}.watch{background:#fff1;color:#fff;border-color:#ffffffaa}.miniFeatures{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;margin-top:18px}.miniFeatures b{display:block;font-size:13px;margin-bottom:4px}.visual{height:500px;position:relative;display:grid;place-items:center;overflow:hidden}.city{position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(180deg,#ffffff00,#001431);clip-path:polygon(0 80%,5% 60%,9% 72%,13% 40%,17% 68%,22% 28%,26% 60%,31% 45%,36% 66%,41% 25%,46% 58%,51% 38%,57% 65%,63% 30%,68% 55%,73% 20%,79% 62%,84% 35%,90% 60%,95% 27%,100% 53%,100% 100%,0 100%)}.globe{width:350px;height:350px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#6be8ff,#087cff 38%,#12358a 72%,#071a42);box-shadow:0 0 90px #1bcfff77;border:2px solid #a6f5ff88}.orbit{position:absolute;width:500px;height:150px;border:3px solid #49e4ff99;border-radius:50%;transform:rotate(-17deg)}.trainer{position:absolute;width:190px;height:260px;border-radius:95px 95px 30px 30px;background:linear-gradient(145deg,#f6d1bf,#d88978);right:22%;bottom:12%;box-shadow:0 20px 50px #0005}.trainer:before{content:"";position:absolute;width:105px;height:105px;background:#30201e;border-radius:50%;top:-25px;left:43px}.trainer:after{content:"AI TRAINER";position:absolute;bottom:18px;left:35px;background:#fff;color:#123;padding:7px 11px;border-radius:12px;font-size:11px;font-weight:900}.bubble{position:absolute;background:#fff;color:#10264b;padding:12px 15px;border-radius:15px;box-shadow:0 12px 30px #0003;font-size:13px;font-weight:700}.b1{right:2%;top:22%}.b2{left:4%;bottom:21%}.stats{position:absolute;right:0;top:65px;width:150px;background:#06275bdd;border:1px solid #ffffff33;border-radius:18px;padding:15px}.stats div{margin:11px 0}.stats b{font-size:21px;display:block}.stats span{font-size:11px;color:#bcdcff}
+.section{padding:34px 0}.titleRow{display:flex;justify-content:space-between;align-items:end;margin-bottom:15px}.titleRow h2{font-size:28px;margin:0}.view{color:#087cff;font-size:13px;font-weight:800}.chips{display:flex;gap:8px;overflow:auto;padding-bottom:9px}.chip{white-space:nowrap;background:#fff;border:1px solid var(--line);border-radius:20px;padding:9px 14px;font-size:12px}.chip.active{background:#087cff;color:#fff;border-color:#087cff}.skills{display:grid;grid-template-columns:repeat(12,1fr);gap:10px}.skill{grid-column:span 1;min-width:90px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:9px;text-align:center;box-shadow:0 5px 18px #09224a08}.skillPic{height:82px;border-radius:10px;background:linear-gradient(145deg,#d8f4ff,#c7d2ff);display:grid;place-items:center;font-size:35px}.skill b{font-size:11px;display:block;margin-top:7px}
+.countryGrid{display:flex;gap:12px;flex-wrap:wrap}.country{background:#fff;border:1px solid var(--line);border-radius:13px;padding:12px 18px;text-align:center;font-size:12px}.flag{font-size:25px;display:block;margin-bottom:4px}
+.how{display:grid;grid-template-columns:1fr 1fr;gap:15px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.step{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px}.num{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#087cff;color:#fff;font-weight:900}.step h3{font-size:13px;margin:9px 0 4px}.step p{font-size:11px;color:var(--muted);margin:0;line-height:1.4}
+.aiGrid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}.aiPanel{background:#072552;border-radius:20px;color:#fff;overflow:hidden;min-height:330px;display:grid;grid-template-columns:42% 58%}.aiPerson{background:radial-gradient(circle at 50% 28%,#f0c0a5 0 15%,transparent 15%),linear-gradient(145deg,#1d68bb,#09244b);position:relative}.aiPerson:after{content:"AISHA • AI TRAINER";position:absolute;bottom:14px;left:15px;background:#fff;color:#09224a;border-radius:12px;padding:8px 11px;font-size:11px;font-weight:900}.conversation{padding:18px}.live{color:#ff6b7e;font-size:11px;font-weight:900}.bubble2{background:#e9f5ff;color:#09224a;padding:10px;border-radius:12px;margin:10px 0;font-size:12px}.bubble2.dark{background:#16477e;color:#fff}.scenarioGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.scenario{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden}.scene{height:95px;background:linear-gradient(135deg,#bceaff,#d9d3ff);display:grid;place-items:center;font-size:42px}.scenario b{font-size:12px;display:block;padding:10px;text-align:center}.journey{background:#062552;color:#fff;border-radius:20px;padding:22px}.ring{width:120px;height:120px;border-radius:50%;border:12px solid #1e5aa8;border-top-color:#21d7ad;border-right-color:#8b5cf6;display:grid;place-items:center;margin:auto;font-weight:900;font-size:23px}.badges{display:flex;justify-content:space-around;margin-top:20px}.badge{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#13c9ff,#7b3ff2);font-size:18px}
+.bottom{background:linear-gradient(90deg,#08265a,#244bd5);color:#fff;padding:28px 0}.bottomGrid{display:flex;align-items:center;justify-content:space-between;gap:20px}.bottom h2{margin:0 0 4px}.bottom p{margin:0;color:#d9e8ff}.whiteBtn{background:#fff;color:#1260c9;border:0}
+footer{background:#06142d;color:#9fb4d4;padding:25px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:1050px){.search{display:none}.skills{grid-template-columns:repeat(6,1fr)}.skill{grid-column:span 1}.heroGrid{grid-template-columns:1fr}.visual{display:none}.how,.aiGrid{grid-template-columns:1fr}}
+@media(max-width:650px){.wrap{padding:0 15px}.links{display:none}.nav{height:62px}.brand{font-size:19px}.mark{width:37px;height:37px}.heroGrid{min-height:520px}.hero{padding:30px 0}.hero h1{font-size:46px}.skills{display:flex;overflow:auto}.skill{min-width:105px}.steps{grid-template-columns:1fr 1fr}.aiPanel{grid-template-columns:1fr}.aiPerson{height:190px}.bottomGrid{flex-direction:column;align-items:flex-start}}
+
+.label{font-size:11px;color:#61708b;text-transform:uppercase;letter-spacing:.08em;margin:0 0 7px}
+#brainChat .wmsg{max-width:82%;padding:11px 13px;border-radius:14px;margin:8px 0;font-size:13px;line-height:1.5}
+#brainChat .wai{background:#eef6ff;color:#09224a;border:1px solid #d7e7fb}
+#brainChat .wuser{margin-left:auto;background:#087cff;color:#fff}
+#brainChat .wcoach{background:#fff7e8;color:#6c4a08;border:1px solid #f2dfb2}
+@media(max-width:900px){#ai-lab .wrap>div>div[style*="grid-template-columns:290px"]{grid-template-columns:1fr!important}#ai-lab .wrap>div>div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr 1fr!important}}
+@media(max-width:600px){#ai-lab .wrap>div>div[style*="grid-template-columns:repeat(4"]{grid-template-columns:1fr!important}#skill-passport .wrap>div[style*="grid-template-columns:180px"]{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
 <header><div class="wrap nav">
-<a class="brand" href="#home"><span class="logo">W</span>WHYNZOJOBS</a>
-<nav class="navlinks"><a href="#home">Home</a><a href="#skills">Skills</a><a href="#trainer">AI Trainer</a><a href="#about">About</a><a href="#privacy">Privacy</a></nav>
-<div class="navbtns"><button class="btn" onclick="openModal('login')">Sign In</button><button class="btn primary" onclick="openModal('signup')">Start Free</button></div>
+<a class="brand" href="#"><span class="mark">W</span>WHYNZO</a>
+<nav class="links"><a href="#home">Home</a><a href="#skills">Skills</a><a href="#countries">Countries</a><a href="#trainer">AI Trainers</a><a href="#pricing">Pricing</a><a href="#blog">Blog</a></nav>
+<div class="spacer"></div><input class="search" placeholder="Search a skill, job or country..."><span class="lang">🌐 English⌄</span><button class="btn">Login</button><button class="btn primary">Sign Up</button>
 </div></header>
 
-<main>
-<section id="home"><div class="wrap hero">
-<div><span class="eyebrow">GLOBAL AI-POWERED OCCUPATIONAL TRAINING</span>
-<h1>Learn any skill.<br><span class="grad">Practice for the real world.</span></h1>
-<p>WHYNZOJOBS helps people learn, practise and demonstrate occupational skills with AI trainers, practical scenarios, assessments and personalised learning paths.</p>
-<div class="cta"><a class="btn primary" href="#trainer">Start Learning Free</a><a class="btn" href="#how">See How It Works</a></div>
-</div>
-<div class="heroVisual"><div class="globe"></div><div class="orbit"></div><div class="float f1">🌍 Any Country</div><div class="float f2">🤖 AI Trainer 24/7</div><div class="float f3">🛠️ Practical Skills</div><div class="float f4">🏆 Skill Evidence</div></div>
+<section class="hero" id="home"><div class="wrap heroGrid">
+<div><div style="font-size:12px;color:#79eaff;font-weight:900">GLOBAL AI-POWERED OCCUPATIONAL TRAINING</div>
+<h1>Your <span>Global</span><br>Skill Training<br><span>Partner.</span></h1>
+<p>Learn from Real-Like AI Trainers for Any Skill, Any Job, Any Country.</p>
+<div class="miniFeatures"><div>🗣️ <b>Talk</b>with AI Trainers</div><div>▶️ <b>Watch</b>Real Demonstrations</div><div>⚙️ <b>Practice</b>Real Scenarios</div><div>✓ <b>Get Feedback</b>& Improve</div><div>🎓 <b>Be Job Ready</b>& Grow</div></div>
+<div class="heroBtns"><a class="btn primary" href="#trainer">Start Learning Free →</a><a class="btn watch" href="#how">▶ Watch How It Works</a></div></div>
+<div class="visual"><div class="globe"></div><div class="orbit"></div><div class="trainer"></div><div class="bubble b1">Hi! I'm Aisha<br><small>Your AI Trainer.</small></div><div class="bubble b2">Any Skill<br>Any Country<br>A Brighter You</div><div class="stats"><div><b>200+</b><span>Occupations</span></div><div><b>50+</b><span>Countries</span></div><div><b>20+</b><span>Languages</span></div><div><b>24/7</b><span>AI Trainers</span></div><div><b>1M+</b><span>Learners Goal</span></div></div><div class="city"></div></div>
 </div></section>
 
-<section id="skills"><div class="wrap"><div class="sectionHead"><h2>Choose your skill</h2><p>From practical trades to professional careers. WHYNZO is designed to expand across occupations, countries and languages.</p></div>
-<div class="cards">
-<div class="card"><div class="icon">⚡</div><h3>Skilled Trades</h3><p>Electrician, plumber, mechanic, HVAC, carpenter, mason and more.</p></div>
-<div class="card"><div class="icon">🍳</div><h3>Service & Hospitality</h3><p>Chef, hotel, retail, delivery, customer service and workplace skills.</p></div>
-<div class="card"><div class="icon">💼</div><h3>Business & BFSI</h3><p>Sales, banking, insurance, finance, marketing and management.</p></div>
-<div class="card"><div class="icon">💻</div><h3>Technology</h3><p>Software, IT, engineering and digital workplace training.</p></div>
-</div></div></section>
+<section class="section" id="skills"><div class="wrap"><div class="titleRow"><h2>Choose Your Skill</h2><a class="view" href="#">View All →</a></div>
+<div class="chips"><span class="chip active">All</span><span class="chip">♙ Business</span><span class="chip">⚕ Healthcare</span><span class="chip">▣ IT & Tech</span><span class="chip">⚒ Skilled Trades</span><span class="chip">♨ Hospitality</span><span class="chip">▣ Transport</span><span class="chip">▤ Government</span><span class="chip">◉ Beauty & Wellness</span><span class="chip">More</span></div>
+<div class="skills"><div class="skill"><div class="skillPic">💼</div><b>Sales</b></div><div class="skill"><div class="skillPic">🩺</div><b>Healthcare</b></div><div class="skill"><div class="skillPic">💻</div><b>IT Support</b></div><div class="skill"><div class="skillPic">🚗</div><b>Driver</b></div><div class="skill"><div class="skillPic">🔧</div><b>Plumber</b></div><div class="skill"><div class="skillPic">⚡</div><b>Electrician</b></div><div class="skill"><div class="skillPic">👨‍🍳</div><b>Chef</b></div><div class="skill"><div class="skillPic">🏗️</div><b>Construction</b></div><div class="skill"><div class="skillPic">📊</div><b>Accounting</b></div><div class="skill"><div class="skillPic">💇</div><b>Beauty</b></div><div class="skill"><div class="skillPic">🏨</div><b>Hospitality</b></div><div class="skill"><div class="skillPic">🌾</div><b>Agriculture</b></div></div></div></section>
 
-<section id="how"><div class="wrap"><div class="sectionHead"><h2>Learn • Practice • Prove</h2><p>The WHYNZO training loop is designed around observable skills rather than a simple course-completion badge.</p></div>
-<div class="cards">
-<div class="card"><div class="icon">1</div><h3>Choose</h3><p>Select an occupation, country, language and skill level.</p></div>
-<div class="card"><div class="icon">2</div><h3>Learn</h3><p>Understand concepts with structured lessons and demonstrations.</p></div>
-<div class="card"><div class="icon">3</div><h3>Practice</h3><p>Work through realistic tasks and workplace scenarios.</p></div>
-<div class="card"><div class="icon">4</div><h3>Prove</h3><p>Complete assessments and build evidence for your Skill Passport.</p></div>
-</div></div></section>
+<section class="section" id="countries"><div class="wrap how"><div><div class="titleRow"><h2>Choose Your Country</h2><a class="view" href="#">View All →</a></div><div class="countryGrid"><div class="country"><span class="flag">🇺🇸</span>USA</div><div class="country"><span class="flag">🇨🇦</span>Canada</div><div class="country"><span class="flag">🇬🇧</span>UK</div><div class="country"><span class="flag">🇩🇪</span>Germany</div><div class="country"><span class="flag">🇦🇺</span>Australia</div><div class="country"><span class="flag">🇦🇪</span>UAE</div><div class="country"><span class="flag">🇸🇬</span>Singapore</div></div></div>
+<div><div class="titleRow"><h2>How It Works</h2></div><div class="steps"><div class="step"><span class="num">1</span><h3>Choose Your Skill</h3><p>Select an occupation and level.</p></div><div class="step"><span class="num">2</span><h3>Talk with AI Trainer</h3><p>Learn interactively.</p></div><div class="step"><span class="num">3</span><h3>Watch Demonstrations</h3><p>See practical examples.</p></div><div class="step"><span class="num">4</span><h3>Practice Scenarios</h3><p>Handle realistic tasks.</p></div><div class="step"><span class="num">5</span><h3>Get Feedback</h3><p>Improve weak areas.</p></div><div class="step"><span class="num">6</span><h3>Be Job Ready</h3><p>Build skill evidence.</p></div></div></div></div></section>
 
-<section id="trainer"><div class="wrap"><div class="sectionHead"><h2>Meet WHYNZO AI</h2><p>Your AI trainer is clearly identified as AI. It can guide practice, ask questions, identify learning gaps and choose the next training action.</p></div>
-<div class="controls">
-<div><div class="label">Occupation</div><select id="occ"><option>Electrician</option><option>Plumber</option><option>Professional Driver</option><option>Chef</option><option>Sales Professional</option><option>Software Developer</option></select></div>
-<div><div class="label">Country</div><select id="country"><option>India</option><option>Germany</option><option>United Kingdom</option><option>United States</option><option>Australia</option></select></div>
-<div><div class="label">Learning language</div><select id="lang"><option>English</option><option>Hindi</option><option>Marathi</option><option>German</option></select></div>
-</div>
-<div class="trainerGrid">
-<aside class="card"><h3>Training Brain</h3><p id="pathText">Choose your training path to begin.</p><button class="btn primary" style="width:100%" onclick="begin()">Build My Training Path</button>
-<div class="flow"><div id="p1" class="active">1 Diagnose</div><div id="p2">2 Teach</div><div id="p3">3 Practise</div><div id="p4">4 Evaluate</div><div id="p5">5 Remediate</div><div id="p6">6 Retest</div></div>
-<div class="progress"><div id="bar" class="bar"></div></div><div class="notice">Learning indicator: <b id="score">0%</b></div>
-</aside>
-<div class="card"><div id="chat" class="chat"></div><div class="sendrow"><input id="answer" placeholder="Answer the AI trainer..." onkeydown="if(event.key==='Enter')send()"><button class="btn" onclick="send()">Send</button></div></div>
-</div></div></section>
-
-<section id="about"><div class="wrap about">
-<div><img class="photo" src="YOUR_PROFESSIONAL_PHOTO_HERE.jpg" alt="Founder professional photo"></div>
-<div class="aboutBox"><span class="eyebrow">ABOUT WHYNZOJOBS</span><h2>Built to make occupational learning more practical and accessible.</h2>
-<p>WHYNZOJOBS is being developed as a global AI-powered occupational training platform. The vision is to help learners understand skills, practise realistic situations and demonstrate readiness across different occupations and countries.</p>
-<p><b>Founder & Creator</b><br>Founder profile and professional introduction will appear here. Your professional photo is intentionally kept on the About page, not the homepage.</p></div>
+<section class="section" id="trainer"><div class="wrap"><div class="titleRow"><h2>Live Conversation with AI Trainer</h2><span class="view">● AI Trainer • Clearly disclosed</span></div>
+<div class="aiGrid"><div class="aiPanel"><div class="aiPerson"></div><div class="conversation"><div class="live">● LIVE AI TRAINER</div><h2>Hi! I'm Aisha.</h2><p style="color:#bcdcff">What would you like to learn today?</p><div class="bubble2">I want to learn customer handling in sales.</div><div class="bubble2 dark">Great! Let's practise a real scenario. A customer says: “It's too expensive.” How would you respond?</div><a class="btn primary" href="#ai-lab">🎙 Practice with WHYNZO AI</a></div></div>
+<div><div class="titleRow"><h2 style="font-size:22px">Practice Real Scenarios</h2><a class="view" href="#">View All →</a></div><div class="scenarioGrid"><div class="scenario"><div class="scene">🛒</div><b>Retail Customer Handling</b></div><div class="scenario"><div class="scene">🧑‍💼</div><b>Interview Practice</b></div><div class="scenario"><div class="scene">👷</div><b>Workplace Safety</b></div><div class="scenario"><div class="scene">🤝</div><b>Client Meeting</b></div></div></div>
+<div class="journey"><h2 style="margin-top:0">Your Learning Journey</h2><div class="ring">Level 3<br>60%</div><div class="badges"><span class="badge">✓</span><span class="badge">◆</span><span class="badge">★</span><span class="badge">✦</span><span class="badge">★</span></div><button class="btn primary" style="width:100%;margin-top:20px">Continue Learning →</button></div></div>
 </div></section>
 
-<section id="privacy"><div class="wrap"><div class="sectionHead"><h2>Privacy & Trust</h2><p>This is the placeholder section for the full Privacy Policy. Before launch, it must be replaced with a legally reviewed policy matching the actual data practices of WHYNZOJOBS.</p></div>
-<div class="cards"><div class="card"><h3>Data minimisation</h3><p>Collect only information required for accounts, learning and requested features.</p></div><div class="card"><h3>AI transparency</h3><p>Clearly disclose when learners are interacting with AI.</p></div><div class="card"><h3>Voice & camera</h3><p>Use these features only with clear user choice and defined retention rules.</p></div><div class="card"><h3>User rights</h3><p>Provide appropriate access, correction, deletion and privacy-request mechanisms.</p></div></div></div></section>
-</main>
-
-<footer><div class="wrap footerGrid"><div>© 2026 WHYNZOJOBS • Learn • Practice • Prove</div><div class="footerlinks"><a href="#privacy">Privacy Policy</a><a href="#about">About</a><a href="#trainer">AI Trainer</a><a href="#home">Back to top</a></div></div></footer>
-
-<div id="modal" class="modal"><div class="modalbox"><button class="close" onclick="closeModal()">×</button><h2 id="modalTitle">Welcome</h2><p>This is the current front-end prototype. Secure production authentication will be added before public account launch.</p><input placeholder="Email"><br><br><input type="password" placeholder="Password"><br><br><button class="btn primary" style="width:100%" onclick="closeModal()">Continue</button></div></div>
+<section class="bottom"><div class="wrap bottomGrid"><div><h2>Join WHYNZO Today</h2><p>and Build a Brighter Tomorrow.</p></div><div><button class="btn whiteBtn">Start Your Journey Free →</button></div></div></section>
+<footer><div class="wrap foot"><span>© 2026 WHYNZOJOBS • Learn • Practice • Prove</span><span>Privacy • Terms • AI & Safety • Copyright/IP • About</span></div></footer>
 
 <script>
-const bank={
-"Electrician":[["Electrical isolation","Before working on a circuit, what should you do first?",["isolate","switch off","de-energ","power off","lockout"]],["Verification","How would you verify the circuit is safe?",["test","voltage","tester","meter","verify"]],["PPE","Why is protective equipment important?",["protect","ppe","gloves","helmet","safety"]]],
-"Plumber":[["Isolation","Before repairing a leaking line, what should you do first?",["valve","shut","water off","isolate","stop"]],["Tools","What tool can tighten a threaded fitting?",["wrench","spanner","pipe wrench","tool"]],["Verification","What should you check after repair?",["leak","pressure","check","test","seal"]]],
-"Professional Driver":[["Pre-trip safety","What should you check before a commercial trip?",["brake","tyre","tire","fuel","mirror","documents","safety"]],["Risk response","What if a passenger asks you to drive dangerously fast?",["refuse","safe","speed","law","stop","rules"]],["Warning response","What if a warning light appears?",["stop","check","warning","safe","vehicle"]]],
-"Chef":[["Food safety","What should you check before food preparation?",["clean","hygiene","hands","surface","food","temperature"]],["Cross-contamination","Why is cross-contamination dangerous?",["raw","bacteria","contamination","ready","hygiene"]],["Storage","How should raw and ready-to-eat food be handled?",["separate","raw","ready","clean","store"]]],
-"Sales Professional":[["Discovery","What questions help understand customer needs?",["need","question","customer","requirement","budget","problem"]],["Objection","How would you respond to a price objection?",["value","need","budget","explain","benefit"]],["Accuracy","Why is accurate product information important?",["accurate","truth","customer","information","trust"]]],
-"Software Developer":[["Version control","What is the purpose of version control?",["git","version","history","changes","branch"]],["Debugging","How would you investigate a difficult bug?",["log","debug","steps","reproduce","test"]],["Security","Why should user input be validated?",["validate","input","security","unsafe","attack"]]]
+const WHYNZO_KNOWLEDGE = {
+"Electrician":[
+ {skill:"Electrical isolation",q:"Before working on a circuit, what should you do first?",keys:["isolate","switch off","de-energ","power off","lockout"],teach:"Control the energy source before work. Follow the applicable local electrical safety procedure and verify the circuit is safe before touching conductors."},
+ {skill:"Verification",q:"How would you verify that a circuit is de-energised?",keys:["test","voltage","tester","meter","verify"],teach:"Use an appropriate, correctly rated test instrument and follow the required verification procedure. Never assume a circuit is dead."},
+ {skill:"PPE",q:"Why is appropriate protective equipment important?",keys:["protect","ppe","gloves","helmet","eye","safety"],teach:"PPE reduces exposure to specific hazards. The correct PPE depends on the task, equipment and applicable workplace rules."},
+ {skill:"Circuit protection",q:"What is the purpose of a circuit breaker?",keys:["protect","overcurrent","fault","trip","breaker"],teach:"A circuit breaker is designed to interrupt a circuit under specified fault or overcurrent conditions. Exact requirements depend on the installation and local code."}
+],
+"Plumber":[
+ {skill:"Water isolation",q:"Before repairing a leaking water line, what should you do first?",keys:["valve","shut","water off","isolate","stop"],teach:"Control the water supply before opening the system. Identify the correct isolation point and verify the flow has stopped."},
+ {skill:"Tools",q:"Which type of tool can be used for a threaded pipe fitting?",keys:["wrench","spanner","pipe wrench","tool"],teach:"Use the correct fitting/tool combination and avoid damaging the pipe or fitting. Tool choice depends on the connection and material."},
+ {skill:"Leak testing",q:"What should you check after completing a repair?",keys:["leak","pressure","check","test","seal"],teach:"Inspect the joint and perform the appropriate leak or pressure check before returning the system to service."},
+ {skill:"Worksite safety",q:"Why should the work area be kept clear and dry?",keys:["slip","trip","safe","clear","dry","hazard"],teach:"Good housekeeping reduces slip, trip and access hazards and helps protect workers and customers."}
+],
+"Professional Driver":[
+ {skill:"Pre-trip inspection",q:"What should you check before starting a commercial trip?",keys:["brake","tyre","tire","fuel","mirror","documents","safety","vehicle"],teach:"Follow the vehicle's required pre-trip inspection. Typical checks include tyres, brakes, lights, mirrors, fluids and required documents, subject to local rules."},
+ {skill:"Unsafe request",q:"What should you do if a passenger asks you to drive dangerously fast?",keys:["refuse","safe","speed","law","stop","rules"],teach:"Safety and applicable traffic rules take priority. Do not perform an unsafe manoeuvre simply because a passenger requests it."},
+ {skill:"Warning light",q:"What should you do if an important warning light appears while driving?",keys:["stop","check","warning","safe","vehicle","service"],teach:"Respond according to the vehicle manufacturer's guidance and the severity of the warning. Move to a safe location when appropriate."},
+ {skill:"Defensive driving",q:"What is the purpose of defensive driving?",keys:["defensive","hazard","distance","anticipate","safe"],teach:"Defensive driving aims to anticipate hazards, maintain appropriate space and reduce avoidable risk."}
+],
+"Chef":[
+ {skill:"Food hygiene",q:"What should you check before beginning food preparation?",keys:["clean","hygiene","hands","surface","food","temperature"],teach:"Start with appropriate personal hygiene, clean preparation surfaces and safe food handling practices."},
+ {skill:"Cross-contamination",q:"Why is cross-contamination dangerous?",keys:["raw","bacteria","contamination","ready","hygiene"],teach:"Microorganisms or allergens can transfer between foods, surfaces or equipment. Separation and correct cleaning controls reduce risk."},
+ {skill:"Storage",q:"How should raw and ready-to-eat food be handled?",keys:["separate","raw","ready","clean","store"],teach:"Keep foods separated and follow applicable storage temperatures, labelling and hygiene procedures."},
+ {skill:"Food quality",q:"What should you do if food appears spoiled or unsafe?",keys:["discard","reject","unsafe","spoiled","do not use","throw"],teach:"Do not serve food that fails applicable safety or quality requirements. Follow the workplace disposal and reporting procedure."}
+],
+"Sales Professional":[
+ {skill:"Needs discovery",q:"What questions help you understand a customer's needs?",keys:["need","question","customer","requirement","budget","problem"],teach:"Use open questions to understand the customer's situation, needs, constraints and desired outcome before recommending a solution."},
+ {skill:"Objection handling",q:"How would you respond to a customer who says the product is too expensive?",keys:["value","need","budget","benefit","explain","compare"],teach:"Acknowledge the concern, clarify the customer's priorities and explain relevant value accurately. Never misrepresent price, benefits or terms."},
+ {skill:"Product accuracy",q:"Why is accurate product information important?",keys:["accurate","truth","customer","information","trust","correct"],teach:"Accurate information supports informed customer decisions and protects trust and compliance."},
+ {skill:"Follow-up",q:"What makes a professional follow-up useful?",keys:["next","follow","time","action","customer","commit"],teach:"A useful follow-up confirms the customer's needs, agreed next action and timing without creating misleading pressure."}
+],
+"Software Developer":[
+ {skill:"Version control",q:"What is the purpose of version control?",keys:["git","version","history","changes","branch","code"],teach:"Version control records changes, supports collaboration and makes it possible to review or restore earlier versions."},
+ {skill:"Debugging",q:"How would you investigate a difficult bug?",keys:["log","debug","steps","reproduce","test","data"],teach:"Define the expected behaviour, reproduce the issue when possible, inspect evidence such as logs and isolate the smallest failing component."},
+ {skill:"Input validation",q:"Why should user input be validated?",keys:["validate","input","security","unsafe","attack","data"],teach:"Validation helps ensure data meets expected rules and reduces security and reliability risks. Server-side validation is important for untrusted input."},
+ {skill:"Testing",q:"What is the benefit of automated testing?",keys:["test","automated","regression","quality","repeat"],teach:"Automated tests provide repeatable checks and can catch regressions earlier in development."}
+]
 };
-let idx=0,points=0,current=null;
-function add(t,c="ai"){let d=document.createElement("div");d.className="msg "+c;d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight}
-function phase(n){for(let i=1;i<=6;i++)document.getElementById("p"+i).classList.toggle("active",i===n)}
-function begin(){idx=0;points=0;chat.innerHTML="";score.textContent="0%";bar.style.width="0";let o=occ.value;pathText.textContent=o+" • "+country.value+" • "+lang.value;add("Hello! I’m WHYNZO AI. I am an AI trainer, not a human.");add("I’ll diagnose your starting point, teach the skill, give you a practical task, evaluate your answer and adapt the next step.");next()}
-function next(){let a=bank[occ.value][idx%3];current=a;phase(idx?3:2);add("Skill: "+a[0]+". "+a[1])}
-function send(){let v=answer.value.trim();if(!v)return;add(v,"user");answer.value="";phase(4);setTimeout(()=>evaluate(v),180)}
-function evaluate(v){let low=v.toLowerCase(),hits=current[2].filter(k=>low.includes(k)).length,good=hits>0;if(good){points++;add("Good. Your answer contains a relevant practical point. In production, WHYNZO will apply a richer occupation-specific rubric.");phase(6)}else{add("Let's improve it. Think about the first action, safety/control, verification and the correct workplace procedure.");phase(5)}idx++;let pct=Math.round(points/Math.min(idx,6)*100);score.textContent=pct+"%";bar.style.width=Math.min(100,pct)+"%";if(idx<6)setTimeout(next,300);else add("Training checkpoint complete. This score is a learning indicator, not a professional licence or certification.");}
-function openModal(type){modal.classList.add("show");modalTitle.textContent=type==="signup"?"Start Learning Free":"Sign In"}
-function closeModal(){modal.classList.remove("show")}
+
+let W_STATE={items:[],i:0,score:0,answered:false,history:[]};
+
+function wAdd(text,cls="wai"){
+ const c=document.getElementById("brainChat");
+ const d=document.createElement("div");d.className="wmsg "+cls;d.textContent=text;c.appendChild(d);c.scrollTop=c.scrollHeight;
+}
+function wPhase(n){for(let i=1;i<=6;i++){const e=document.getElementById("brain"+i);if(e)e.classList.toggle("active",i===n)}}
+function wSetProgress(p){p=Math.max(0,Math.min(100,p));document.getElementById("brainBar").style.width=p+"%";document.getElementById("brainScore").textContent=Math.round(p)+"%";document.getElementById("passportRing").textContent=Math.round(p)+"%"}
+function wAsk(){
+ const item=W_STATE.items[W_STATE.i];
+ if(!item){wFinish();return}
+ wPhase(W_STATE.i===0?2:3);
+ wAdd("Skill "+(W_STATE.i+1)+": "+item.skill+". "+item.q);
+ W_STATE.answered=false;
+}
+function startWHYNZOTraining(){
+ const occ=document.getElementById("aiOcc").value,country=document.getElementById("aiCountry").value,lang=document.getElementById("aiLang").value,level=document.getElementById("aiLevel").value;
+ W_STATE={items:WHYNZO_KNOWLEDGE[occ],i:0,score:0,answered:false,history:[]};
+ document.getElementById("brainChat").innerHTML="";
+ document.getElementById("brainResult").style.display="none";
+ document.getElementById("aiPathTitle").textContent=occ+" training path";
+ document.getElementById("aiPathText").textContent=level+" • "+country+" • learning in "+lang+". WHYNZO AI will diagnose, teach, practise, evaluate and adapt.";
+ wSetProgress(0);wPhase(1);
+ wAdd("Hello! I’m WHYNZO AI. I am an AI trainer, not a human.");
+ wAdd("I’ll guide you through "+occ+" training. Country selection helps WHYNZO organise local context; it does not by itself establish a legal licence or qualification.");
+ wAsk();
+ document.getElementById("ai-lab").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function answerWHYNZO(){
+ const input=document.getElementById("brainAnswer");const v=input.value.trim();if(!v||!W_STATE.items.length)return;
+ if(W_STATE.answered)return;
+ W_STATE.answered=true;wAdd(v,"wuser");input.value="";
+ wPhase(4);
+ const item=W_STATE.items[W_STATE.i],low=v.toLowerCase();
+ const hits=item.keys.filter(k=>low.includes(k.toLowerCase())).length;
+ const good=hits>0;
+ if(good){
+   W_STATE.score++;W_STATE.history.push({skill:item.skill,passed:true});
+   wAdd("Evaluation: relevant evidence detected. Good start.");
+   wAdd(item.teach,"wai");
+ }else{
+   W_STATE.history.push({skill:item.skill,passed:false});
+   wAdd("Evaluation: I need more evidence in your answer. Let's focus on the key principle.","wcoach");
+   wAdd("Trainer hint: "+item.teach,"wcoach");
+ }
+ const p=((W_STATE.score)/(W_STATE.i+1))*100;wSetProgress(p);
+ if(good){wPhase(6)}else{wPhase(5)}
+ setTimeout(()=>{
+   W_STATE.i++;
+   if(W_STATE.i<W_STATE.items.length){
+     if(!good)wAdd("Remediation complete. Now try the next skill with the same safety-first approach.");
+     wAsk();
+   }else wFinish();
+ },500);
+}
+function wFinish(){
+ const total=W_STATE.items.length||1,p=Math.round(W_STATE.score/total*100);
+ wSetProgress(p);wPhase(6);
+ const r=document.getElementById("brainResult");r.style.display="block";
+ r.textContent="Checkpoint complete: "+W_STATE.score+" of "+total+" skill responses contained relevant evidence ("+p+"%). WHYNZO can use this result to recommend review and retesting.";
+ document.getElementById("passportTitle").textContent="WHYNZO Skill Evidence • "+p+"% checkpoint";
+ document.getElementById("passportText").textContent="Completed skills: "+W_STATE.history.filter(x=>x.passed).map(x=>x.skill).join(", ")+"."+(W_STATE.score<total?" Recommended next action: review missed skills and retest.":" Recommended next action: progress to a harder scenario.");
+}
 </script>
-</body>
-</html>
+
+</body></html>
