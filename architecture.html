@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WHYNZO — Platform Architecture</title>
+<style>
+:root{--ink:#12203a;--muted:#68748a;--bg:#f4f7fb;--card:#fff;--line:#e3e8f0;--blue:#2563eb;--purple:#7c3aed;--green:#16a34a;--amber:#d97706;--red:#dc2626}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 4%;position:sticky;top:0;z-index:5}.brand{font-weight:900;font-size:20px;display:flex;gap:10px;align-items:center}.mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed);color:white;display:grid;place-items:center}.tag{font-size:8px;letter-spacing:1.3px;color:#778196;display:block}.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;font-weight:800;font-size:10px}
+main{width:min(1180px,92%);margin:28px auto 60px}.eyebrow{display:inline-block;padding:7px 10px;border-radius:999px;background:#eaf2ff;color:#2455c3;font-size:9px;font-weight:900}h1{font-size:34px;letter-spacing:-1px;margin:10px 0 5px}.sub{font-size:12px;color:var(--muted);line-height:1.55;max-width:900px}
+.arch{margin-top:22px;display:grid;gap:10px}.layer{background:#fff;border:1px solid var(--line);border-radius:17px;padding:15px;box-shadow:0 12px 30px #13234b10}.layer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.layer h3{margin:0;font-size:13px}.layer small{color:var(--muted);font-size:9px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-size:9px;font-weight:800;background:#fafbff}.front{border-left:4px solid var(--blue)}.app{border-left:4px solid var(--purple)}.data{border-left:4px solid var(--green)}.security{border-left:4px solid var(--amber)}
+.arrow{text-align:center;color:#8290a8;font-size:18px;height:8px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:16px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:16px;box-shadow:0 12px 30px #13234b10}.card h3{margin:0 0 11px;font-size:13px}.item{padding:10px 0;border-bottom:1px solid var(--line);font-size:10px}.item:last-child{border:0}.item b{display:block}.item span{display:block;color:var(--muted);margin-top:3px;line-height:1.45}.status{float:right;padding:4px 7px;border-radius:7px;font-size:8px;font-weight:900}.ready{background:#dcfce7;color:#15803d}.later{background:#fef3c7;color:#92400e}.locked{background:#fee2e2;color:#991b1b}
+.notice{margin-top:15px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:13px;padding:13px;font-size:9px;line-height:1.55}.road{margin-top:15px}.road ol{margin:0;padding-left:20px}.road li{padding:6px 0;font-size:10px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:28px}.brand{font-size:17px}}
+</style>
+</head>
+<body>
+<header>
+<div class="brand"><div class="mark">W</div><div>WHYNZO<span class="tag">PLATFORM ARCHITECTURE</span></div></div>
+<button class="btn" onclick="location.href='admin.html'">← Admin Center</button>
+</header>
+
+<main>
+<span class="eyebrow">ZERO-COST PROTOTYPE • SECURE-BY-DESIGN</span>
+<h1>The foundation behind the WHYNZO learning platform.</h1>
+<div class="sub">A production-oriented architecture map connecting the public site, learner experience, training engine, assessments, Skill Passport and governance controls. This page documents the architecture; it does not pretend that a browser-only HTML prototype is a secure production backend.</div>
+
+<section class="arch">
+<div class="layer front"><div class="layer-head"><h3>01 — EXPERIENCE LAYER</h3><small>Browser / Cloudflare Pages</small></div><div class="chips"><span class="chip">index.html</span><span class="chip">auth.html</span><span class="chip">onboarding.html</span><span class="chip">learner.html</span><span class="chip">training.html</span><span class="chip">trainer.html</span><span class="chip">voice.html</span><span class="chip">camera.html</span><span class="chip">assessment.html</span><span class="chip">passport.html</span></div></div>
+<div class="arrow">↓</div>
+<div class="layer app"><div class="layer-head"><h3>02 — APPLICATION LAYER</h3><small>Backend to be implemented</small></div><div class="chips"><span class="chip">Authentication</span><span class="chip">Learner Profiles</span><span class="chip">Learning Paths</span><span class="chip">Content Engine</span><span class="chip">AI Trainer Orchestrator</span><span class="chip">Assessments</span><span class="chip">Progress</span><span class="chip">Skill Passport</span><span class="chip">Admin</span></div></div>
+<div class="arrow">↓</div>
+<div class="layer data"><div class="layer-head"><h3>03 — DATA LAYER</h3><small>Persistent records</small></div><div class="chips"><span class="chip">Users</span><span class="chip">Profiles</span><span class="chip">Occupations</span><span class="chip">Countries</span><span class="chip">Languages</span><span class="chip">Lessons</span><span class="chip">Attempts</span><span class="chip">Evidence</span><span class="chip">Compliance Records</span><span class="chip">Audit Logs</span></div></div>
+<div class="arrow">↓</div>
+<div class="layer security"><div class="layer-head"><h3>04 — SECURITY & GOVERNANCE</h3><small>Cross-cutting controls</small></div><div class="chips"><span class="chip">HTTPS / TLS</span><span class="chip">Password Hashing</span><span class="chip">Sessions</span><span class="chip">Rate Limits</span><span class="chip">Input Validation</span><span class="chip">CSRF Protection</span><span class="chip">Secrets Management</span><span class="chip">Audit Trail</span><span class="chip">Data Minimization</span></div></div>
+</section>
+
+<div class="grid">
+<section class="card"><h3>Core data model</h3>
+<div class="item"><span class="status ready">DESIGN</span><b>User → Profile</b><span>Account identity connects to country, languages, occupation and learning level.</span></div>
+<div class="item"><span class="status ready">DESIGN</span><b>Profile → Learning Path</b><span>Occupation + country + language determine the learner's training path.</span></div>
+<div class="item"><span class="status ready">DESIGN</span><b>Learning Path → Evidence</b><span>Lessons, practical practice, simulations and assessments create evidence.</span></div>
+<div class="item"><span class="status ready">DESIGN</span><b>Evidence → Skill Passport</b><span>Only supported, observable learning evidence should appear in the passport.</span></div>
+</section>
+
+<section class="card"><h3>Production security gates</h3>
+<div class="item"><span class="status locked">REQUIRED</span><b>No credentials in HTML</b><span>Browser files must never contain passwords, database secrets or private keys.</span></div>
+<div class="item"><span class="status locked">REQUIRED</span><b>Server-side authorization</b><span>Admin permissions and protected records must be enforced on the server.</span></div>
+<div class="item"><span class="status later">NEXT</span><b>Secure session system</b><span>HttpOnly/Secure/SameSite cookies or another properly designed session mechanism.</span></div>
+<div class="item"><span class="status later">NEXT</span><b>Database backups</b><span>Recovery, retention and deletion procedures must be defined before production.</span></div>
+</section>
+</div>
+
+<section class="card road">
+<h3>Implementation order</h3>
+<ol>
+<li><b>Backend foundation</b> — lightweight Python/FastAPI service with environment-based configuration.</li>
+<li><b>Database schema</b> — users, profiles, occupations, content, progress, assessments, evidence and governance.</li>
+<li><b>Authentication</b> — secure password hashing, sessions, verification and reset flows.</li>
+<li><b>API boundaries</b> — validate every request and authorize every protected operation.</li>
+<li><b>Connect learner modules</b> — replace prototype/local storage with server persistence.</li>
+<li><b>Admin governance</b> — content, compliance, audit and publishing controls.</li>
+<li><b>Security test</b> — authorization, input validation, session security, dependency and upload checks before production.</li>
+</ol>
+</section>
+
+<div class="notice"><b>Architecture rule:</b> WHYNZO's current HTML files are front-end prototypes. Do not collect real passwords, sensitive learner data, camera recordings or production assessment evidence until the secure backend, storage, access controls and privacy/retention rules are implemented.</div>
+</main>
+</body>
+</html>
