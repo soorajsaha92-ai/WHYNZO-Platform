@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WHYNZOJOBS — Sign In</title>
+<style>
+:root{--ink:#14213d;--muted:#68738a;--bg:#f5f7fc;--card:#fff;--line:#e4e8f1;--blue:#2563eb;--purple:#7c3aed;--green:#16a34a;--red:#dc2626;--shadow:0 20px 55px #1e2b5018}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 85% 10%,#e8eaff 0,transparent 32%),var(--bg);color:var(--ink)}
+button,input{font:inherit}button{cursor:pointer}header{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px}.mark{width:37px;height:37px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed);display:grid;place-items:center;color:#fff;font-weight:1000}.tag{display:block;font-size:9px;color:#6b7280;letter-spacing:1.5px}.back{background:#fff;border:1px solid var(--line);padding:10px 15px;border-radius:12px;font-weight:800}
+.wrap{width:min(1000px,92%);margin:50px auto}.layout{display:grid;grid-template-columns:1fr 410px;gap:25px;align-items:stretch}.hero{padding:35px 10px}.eyebrow{display:inline-flex;gap:7px;align-items:center;background:#eef2ff;color:#4f46e5;padding:8px 12px;border-radius:999px;font-size:11px;font-weight:900}.dot{width:7px;height:7px;background:#22c55e;border-radius:50%}h1{font-size:clamp(35px,5vw,56px);letter-spacing:-2px;line-height:1.02;margin:16px 0 12px}.hero p{color:var(--muted);line-height:1.6;max-width:560px}.features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:25px}.feature{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px}.feature b{font-size:12px}.feature span{display:block;color:var(--muted);font-size:10px;margin-top:4px;line-height:1.45}
+.card{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:25px}.card h2{margin:0 0 5px;font-size:24px}.sub{color:var(--muted);font-size:11px;margin-bottom:20px}.tabs{display:grid;grid-template-columns:1fr 1fr;background:#f4f6fa;padding:4px;border-radius:12px;margin-bottom:18px}.tab{border:0;background:transparent;padding:10px;border-radius:9px;font-weight:800;font-size:12px;color:#667085}.tab.active{background:#fff;box-shadow:0 2px 8px #1e2b5010;color:var(--ink)}.field{margin-bottom:13px}.field label{display:block;font-size:10px;font-weight:900;color:#667085;margin-bottom:6px}.field input{width:100%;padding:12px;border:1px solid var(--line);border-radius:11px;outline:none}.field input:focus{border-color:#8fb0ff;box-shadow:0 0 0 3px #2563eb12}.row{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--muted);margin:4px 0 16px}.check{display:flex;align-items:center;gap:6px}.check input{accent-color:#2563eb}.link{border:0;background:transparent;color:#2563eb;font-size:10px;font-weight:800;padding:0}.primary{width:100%;border:0;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:13px;border-radius:12px;font-weight:900}.message{display:none;margin-top:12px;padding:11px;border-radius:11px;font-size:10px;line-height:1.45}.success{display:block;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534}.error{display:block;background:#fef2f2;border:1px solid #fecaca;color:#991b1b}.security{margin-top:18px;padding:13px;border:1px solid var(--line);background:#f8fafc;border-radius:13px;color:#6b7280;font-size:9px;line-height:1.5}.security b{color:#39465d}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.hero{padding:5px}.features{grid-template-columns:1fr 1fr}}@media(max-width:520px){header{height:64px;padding:0 4%}.brand{font-size:17px}.wrap{margin:28px auto}.card{padding:20px}.features{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark">W</div><div>WHYNZO<span class="tag">LEARN • PRACTICE • PROVE</span></div></div><button class="back" onclick="location.href='index.html'">← Home</button></header>
+<main class="wrap">
+<div class="layout">
+<section class="hero">
+<div class="eyebrow"><span class="dot"></span> YOUR LEARNING ACCOUNT</div>
+<h1>Continue building skills for the real world.</h1>
+<p>Sign in to continue your WHYNZO learning path, track practical training, practise with AI trainers and build evidence in your Skill Passport.</p>
+<div class="features">
+<div class="feature"><b>Personal path</b><span>Occupation, country and language settings.</span></div>
+<div class="feature"><b>Progress</b><span>Continue lessons from where you stopped.</span></div>
+<div class="feature"><b>AI Trainer</b><span>Practice realistic workplace scenarios.</span></div>
+<div class="feature"><b>Skill Passport</b><span>Keep a record of training evidence.</span></div>
+</div>
+</section>
+<section class="card">
+<h2 id="title">Welcome back</h2><div class="sub" id="sub">Sign in to continue your training.</div>
+<div class="tabs"><button class="tab active" id="signTab" onclick="mode('signin')">Sign in</button><button class="tab" id="createTab" onclick="mode('signup')">Create account</button></div>
+<div id="signin">
+<div class="field"><label>EMAIL</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label>PASSWORD</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter password"></div>
+<div class="row"><label class="check"><input type="checkbox"> Remember me</label><button class="link" onclick="forgot()">Forgot password?</button></div>
+<button class="primary" onclick="signin()">Sign in securely</button>
+</div>
+<div id="signup" style="display:none">
+<div class="field"><label>NAME</label><input id="newname" autocomplete="name" placeholder="Your name"></div>
+<div class="field"><label>EMAIL</label><input id="newemail" type="email" autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label>PASSWORD</label><input id="newpass" type="password" autocomplete="new-password" placeholder="Create a strong password"></div>
+<div class="field"><label>CONFIRM PASSWORD</label><input id="confirm" type="password" autocomplete="new-password" placeholder="Repeat password"></div>
+<div class="row"><label class="check"><input type="checkbox" id="terms"> I agree to the Terms & Privacy Notice</label></div>
+<button class="primary" onclick="signup()">Create my account</button>
+</div>
+<div id="message" class="message"></div>
+<div class="security"><b>Prototype security boundary:</b> this page does not store or transmit real credentials to a server. Production WHYNZO authentication must use a secure backend, Argon2id/bcrypt password hashing, protected sessions, CSRF protection, rate limiting, email verification, password-reset tokens, secure cookies, HTTPS, audit logging and secrets kept outside GitHub. Never put passwords, API keys or database credentials in HTML.</div>
+</section>
+</div>
+</main>
+<script>
+function mode(m){document.getElementById('signin').style.display=m==='signin'?'block':'none';document.getElementById('signup').style.display=m==='signup'?'block':'none';document.getElementById('signTab').classList.toggle('active',m==='signin');document.getElementById('createTab').classList.toggle('active',m==='signup');document.getElementById('title').textContent=m==='signin'?'Welcome back':'Create your WHYNZO account';document.getElementById('sub').textContent=m==='signin'?'Sign in to continue your training.':'Start your personalized learning path for free.';clearMsg()}
+function msg(text,type){const m=document.getElementById('message');m.textContent=text;m.className='message '+type}
+function clearMsg(){const m=document.getElementById('message');m.className='message';m.textContent=''}
+function signin(){const e=document.getElementById('email').value.trim(),p=document.getElementById('password').value;if(!e||!p){msg('Enter your email and password to continue.','error');return}msg('Prototype sign-in accepted. Production authentication is not connected yet. Opening learner dashboard.','success');setTimeout(()=>location.href='learner.html',500)}
+function signup(){const n=document.getElementById('newname').value.trim(),e=document.getElementById('newemail').value.trim(),p=document.getElementById('newpass').value,c=document.getElementById('confirm').value,t=document.getElementById('terms').checked;if(!n||!e||!p||!c){msg('Complete all required fields.','error');return}if(p!==c){msg('Passwords do not match.','error');return}if(p.length<10){msg('For production, use a strong password of at least 10 characters.','error');return}if(!t){msg('Please accept the Terms and Privacy Notice.','error');return}localStorage.setItem('whynzo_demo_account',JSON.stringify({name:n,email:e}));msg('Prototype account created locally. Production email verification and secure server-side account creation are still required.','success');setTimeout(()=>location.href='onboarding.html',700)}
+function forgot(){msg('Password reset will be connected to a secure server-side reset flow in production.','success')}
+</script>
+</body>
+</html>
