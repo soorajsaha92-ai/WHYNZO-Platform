@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WHYNZOJOBS — Admin Control Center</title>
+<style>
+:root{--ink:#14213d;--muted:#68738a;--bg:#f5f7fc;--card:#fff;--line:#e4e8f1;--blue:#2563eb;--purple:#7c3aed;--green:#16a34a;--amber:#d97706;--red:#dc2626;--shadow:0 14px 40px #1e2b5015}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+button,input,select{font:inherit}button{cursor:pointer}header{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 4%;position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px}.mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed);display:grid;place-items:center;color:#fff}.tag{display:block;font-size:8px;color:#6b7280;letter-spacing:1.4px}.head-actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:10px;font-weight:800;font-size:11px}.primary{background:#14213d;color:#fff;border-color:#14213d}
+.layout{display:grid;grid-template-columns:235px 1fr;min-height:calc(100vh - 70px)}aside{background:#fff;border-right:1px solid var(--line);padding:18px}.admin-badge{padding:12px;border-radius:14px;background:#eef2ff;color:#3730a3;font-size:10px;font-weight:900;margin-bottom:15px}.nav{display:grid;gap:6px}.nav button{text-align:left;border:1px solid transparent;background:transparent;padding:11px;border-radius:10px;font-size:11px;font-weight:800;color:#68738a}.nav button.active{background:#eff5ff;color:#1d4ed8;border-color:#dbe6ff}.security{margin-top:25px;padding:11px;background:#f8fafc;border:1px solid var(--line);border-radius:12px;font-size:9px;color:#6b7280;line-height:1.5}
+main{padding:25px;width:min(1180px,100%)}.eyebrow{display:inline-flex;gap:7px;align-items:center;background:#eef2ff;color:#4f46e5;padding:7px 10px;border-radius:999px;font-size:10px;font-weight:900}.dot{width:6px;height:6px;background:#22c55e;border-radius:50%}h1{font-size:34px;letter-spacing:-1px;margin:10px 0 5px}.sub{color:var(--muted);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px;box-shadow:var(--shadow)}.stat b{font-size:22px}.stat span{display:block;font-size:9px;color:var(--muted);margin-top:3px}
+.toolbar{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:22px 0 10px}.search{border:1px solid var(--line);background:#fff;padding:10px 12px;border-radius:10px;width:280px;outline:none}.filters{display:flex;gap:7px}.filters select{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px;font-size:10px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:13px;border-bottom:1px solid var(--line);font-size:10px}.table th{font-size:9px;color:#667085;background:#fafbff}.status{padding:5px 7px;border-radius:7px;font-size:8px;font-weight:900}.approved{background:#dcfce7;color:#15803d}.review{background:#fef3c7;color:#92400e}.draft{background:#f1f5f9;color:#64748b}.action{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 8px;font-size:9px;font-weight:800}
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}.box{padding:17px}.box h3{margin:0 0 10px;font-size:13px}.queue{display:grid;gap:7px}.q{display:flex;justify-content:space-between;gap:8px;padding:10px;background:#fafbff;border:1px solid var(--line);border-radius:10px;font-size:9px}.notice{margin-top:15px;padding:12px;border-radius:12px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:9px;line-height:1.5}
+@media(max-width:850px){.layout{grid-template-columns:1fr}aside{border-right:0;border-bottom:1px solid var(--line)}.nav{display:flex;overflow:auto}.nav button{white-space:nowrap}.stats{grid-template-columns:1fr 1fr}.toolbar{align-items:stretch;flex-direction:column}.search{width:100%}.filters{flex-wrap:wrap}.lower{grid-template-columns:1fr}}@media(max-width:560px){header{height:64px;padding:0 3%}.brand{font-size:17px}main{padding:18px 4%}h1{font-size:28px}.table{min-width:700px}.panel{overflow:auto}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark">W</div><div>WHYNZO<span class="tag">ADMIN CONTROL CENTER</span></div></div><div class="head-actions"><button class="btn" onclick="location.href='learner.html'">Learner View</button><button class="btn primary" onclick="alert('Prototype only — secure admin authentication must be connected on the backend.')">Admin Security</button></div></header>
+<div class="layout">
+<aside>
+<div class="admin-badge">● ADMIN • CONTENT & SAFETY</div>
+<div class="nav">
+<button class="active" onclick="show('overview',this)">Overview</button>
+<button onclick="show('content',this)">Content</button>
+<button onclick="show('occupations',this)">Occupations</button>
+<button onclick="show('countries',this)">Countries</button>
+<button onclick="show('languages',this)">Languages</button>
+<button onclick="show('compliance',this)">Compliance</button>
+</div>
+<div class="security"><b>Production boundary:</b> admin actions must be server-authorized. Never rely on hidden HTML buttons or client-side roles for access control.</div>
+</aside>
+<main>
+<div class="eyebrow"><span class="dot"></span> CONTROL CENTER</div>
+<h1>WHYNZO platform operations</h1>
+<div class="sub">Manage learning content, occupation pathways, country context and review status from one place.</div>
+
+<section id="overview">
+<div class="stats"><div class="stat"><b>10</b><span>Occupation paths</span></div><div class="stat"><b>6</b><span>Country contexts</span></div><div class="stat"><b>5</b><span>Learning languages</span></div><div class="stat"><b>4</b><span>Items awaiting review</span></div></div>
+<div class="lower">
+<div class="panel box"><h3>Content review queue</h3><div class="queue"><div class="q"><span>Germany • Electrician safety</span><b style="color:#b45309">Review</b></div><div class="q"><span>India • Plumber pathway</span><b style="color:#15803d">Approved</b></div><div class="q"><span>Workplace German phrases</span><b style="color:#b45309">Review</b></div><div class="q"><span>Camera practice guidance</span><b style="color:#15803d">Approved</b></div></div></div>
+<div class="panel box"><h3>Governance checks</h3><div class="queue"><div class="q"><span>AI disclosure</span><b style="color:#15803d">Ready</b></div><div class="q"><span>Licensing disclaimer</span><b style="color:#15803d">Ready</b></div><div class="q"><span>Privacy review</span><b style="color:#b45309">Review</b></div><div class="q"><span>Copyright source records</span><b style="color:#b45309">Review</b></div></div></div>
+</div>
+<div class="notice"><b>Compliance-by-design:</b> country-specific legal, licensing, qualification and safety information must have an authoritative source, jurisdiction, effective/review date and responsible reviewer before being published as current guidance.</div>
+</section>
+
+<section id="content" style="display:none">
+<div class="toolbar"><input class="search" id="search" placeholder="Search content..." oninput="filterTable()"><div class="filters"><select id="statusFilter" onchange="filterTable()"><option>All status</option><option>Approved</option><option>Review</option><option>Draft</option></select><button class="btn primary" onclick="alert('Prototype action — production version will open a secured content editor.')">+ New content</button></div></div>
+<div class="panel"><table class="table" id="contentTable"><thead><tr><th>CONTENT</th><th>TYPE</th><th>COUNTRY</th><th>STATUS</th><th>REVIEW</th><th>ACTION</th></tr></thead><tbody>
+<tr><td>Electrical Safety Fundamentals</td><td>Lesson</td><td>Germany</td><td><span class="status review">Review</span></td><td>Pending</td><td><button class="action">Open</button></td></tr>
+<tr><td>Customer Communication</td><td>Scenario</td><td>Global</td><td><span class="status approved">Approved</span></td><td>2026-09</td><td><button class="action">Open</button></td></tr>
+<tr><td>Camera Practice Guidance</td><td>Policy</td><td>Global</td><td><span class="status approved">Approved</span></td><td>2026-09</td><td><button class="action">Open</button></td></tr>
+<tr><td>Workplace German Phrases</td><td>Language</td><td>Germany</td><td><span class="status review">Review</span></td><td>Pending</td><td><button class="action">Open</button></td></tr>
+<tr><td>Plumber Core Path</td><td>Pathway</td><td>India</td><td><span class="status draft">Draft</span></td><td>Not reviewed</td><td><button class="action">Open</button></td></tr>
+</tbody></table></div>
+</section>
+
+<section id="occupations" style="display:none"><div class="panel box"><h3>Occupation catalogue</h3><div class="queue" id="occList"></div></div></section>
+<section id="countries" style="display:none"><div class="panel box"><h3>Country contexts</h3><div class="queue" id="countryList"></div></div></section>
+<section id="languages" style="display:none"><div class="panel box"><h3>Language coverage</h3><div class="queue" id="languageList"></div></div></section>
+<section id="compliance" style="display:none"><div class="panel box"><h3>Compliance & safety registry</h3><div class="queue">
+<div class="q"><span>AI trainer disclosure</span><b style="color:#15803d">Configured</b></div>
+<div class="q"><span>Camera consent / retention</span><b style="color:#b45309">Needs backend</b></div>
+<div class="q"><span>Occupation licensing references</span><b style="color:#b45309">Needs sources</b></div>
+<div class="q"><span>Copyright / media provenance</span><b style="color:#b45309">Needs registry</b></div>
+<div class="q"><span>Admin access control</span><b style="color:#b45309">Needs backend</b></div>
+</div><div class="notice">This prototype intentionally does not claim that these controls are production-ready. Administrative authorization, audit logs, source records and publishing workflows must be enforced server-side.</div></div></section>
+</main></div>
+<script>
+const occ=['Electrician','Plumber','Chef','Mechanic','Carpenter','HVAC Technician','Sales Professional','Banking Professional','IT Support','Hospitality Professional'];
+const countries=['Germany','India','United Kingdom','United Arab Emirates','Canada','Australia'];
+const langs=['Hindi','English','Marathi','Bengali','Tamil','German','French'];
+function fill(id,items,status='Configured'){document.getElementById(id).innerHTML=items.map(x=>`<div class="q"><span>${x}</span><b style="color:#15803d">${status}</b></div>`).join('')}
+fill('occList',occ,'Path active');
+fill('countryList',countries,'Context active');
+fill('languageList',langs,'Supported');
+function show(id,el){document.querySelectorAll('main>section').forEach(s=>s.style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));el.classList.add('active')}
+function filterTable(){let q=document.getElementById('search').value.toLowerCase(),f=document.getElementById('statusFilter').value;document.querySelectorAll('#contentTable tbody tr').forEach(r=>{let text=r.innerText.toLowerCase(),status=r.children[3].innerText; r.style.display=(!q||text.includes(q))&&(f==='All status'||status===f)?'':'none'})}
+</script>
+</body>
+</html>
