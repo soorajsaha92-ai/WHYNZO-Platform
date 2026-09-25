@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WHYNZOJOBS — Voice & Language Lab</title>
+<style>
+:root{--ink:#14213d;--muted:#68738a;--bg:#f5f7fc;--card:#fff;--line:#e4e8f1;--blue:#2563eb;--purple:#7c3aed;--cyan:#06b6d4;--green:#16a34a;--shadow:0 16px 45px #1e2b5017}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,select{font:inherit}button{cursor:pointer}
+header{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px}.mark{width:37px;height:37px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed);display:grid;place-items:center;color:#fff;font-weight:1000}.tag{display:block;font-size:9px;color:#6b7280;letter-spacing:1.5px}.back{background:#fff;border:1px solid var(--line);padding:10px 15px;border-radius:12px;font-weight:800}
+.wrap{width:min(1200px,92%);margin:30px auto 55px}.eyebrow{display:inline-flex;gap:7px;align-items:center;background:#eef2ff;color:#4f46e5;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:900}.dot{width:7px;height:7px;background:#22c55e;border-radius:50%}h1{font-size:clamp(30px,4vw,48px);letter-spacing:-1.5px;margin:12px 0 7px} .intro{color:var(--muted);max-width:800px;line-height:1.55}
+.grid{display:grid;grid-template-columns:340px 1fr;gap:20px;margin-top:24px}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
+.controls{padding:20px}.controls h3{margin:0 0 15px}.field{margin-bottom:15px}.field label{font-size:11px;font-weight:900;color:#667085;display:block;margin-bottom:7px}.field select{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink)}
+.langs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.lang{border:1px solid var(--line);background:#fafbfe;padding:10px;border-radius:12px;text-align:left;font-weight:800;font-size:12px}.lang.active{border-color:#8fb0ff;background:#eff5ff;color:#1d4ed8}
+.voice{padding:20px;min-height:600px}.voice-top{display:flex;justify-content:space-between;align-items:center;gap:10px}.ai{display:flex;align-items:center;gap:10px}.mini{width:48px;height:48px;border-radius:15px;background:linear-gradient(145deg,#dbeafe,#ede9fe);position:relative;overflow:hidden}.face{position:absolute;width:26px;height:30px;border-radius:45%;left:50%;top:10px;transform:translateX(-50%);background:#b97758;box-shadow:0 -7px 0 3px #241e29}.face:before{content:"";position:absolute;width:3px;height:3px;border-radius:50%;background:#20212b;left:7px;top:13px;box-shadow:9px 0 #20212b}.face:after{content:"";position:absolute;width:10px;height:4px;border-bottom:1px solid #63372f;border-radius:50%;left:8px;top:21px}.status{color:#16a34a;font-size:11px;font-weight:900}
+.stage{margin-top:18px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#f8fbff,#f7f4ff);padding:24px;text-align:center}.wave{height:120px;display:flex;justify-content:center;align-items:center;gap:6px}.bar{width:7px;border-radius:9px;background:linear-gradient(#06b6d4,#7c3aed);animation:pulse 1s ease-in-out infinite}.bar:nth-child(1){height:26px}.bar:nth-child(2){height:52px;animation-delay:.1s}.bar:nth-child(3){height:82px;animation-delay:.2s}.bar:nth-child(4){height:48px;animation-delay:.3s}.bar:nth-child(5){height:96px;animation-delay:.4s}.bar:nth-child(6){height:55px;animation-delay:.5s}.bar:nth-child(7){height:30px;animation-delay:.6s}@keyframes pulse{50%{transform:scaleY:.45;opacity:.55}}
+.statusline{font-size:13px;font-weight:800;margin:4px 0;color:#4b5870}.transcript{margin:15px auto 0;max-width:700px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px;text-align:left;font-size:13px;line-height:1.5;color:#44516a}.controls-row{display:flex;justify-content:center;gap:10px;margin-top:18px;flex-wrap:wrap}.big{border:0;padding:13px 19px;border-radius:13px;font-weight:900;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line);padding:12px 17px;border-radius:13px;font-weight:800}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.feature{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fbfcff}.feature b{font-size:13px}.feature p{font-size:10px;color:var(--muted);line-height:1.45;margin:5px 0 0}
+.disclosure{margin-top:18px;padding:13px;border-radius:13px;background:#f8fafc;border:1px solid var(--line);font-size:10px;color:#6b7280;line-height:1.5}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr 1fr}}@media(max-width:520px){header{padding:0 4%;height:64px}.brand{font-size:17px}.wrap{width:94%;margin-top:20px}.feature-grid{grid-template-columns:1fr}.voice{padding:15px}.stage{padding:15px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark">W</div><div>WHYNZO<span class="tag">LEARN • PRACTICE • PROVE</span></div></div><button class="back" onclick="location.href='trainer.html'">← AI Trainer</button></header>
+<main class="wrap">
+<div class="eyebrow"><span class="dot"></span> VOICE & MULTILINGUAL LAB</div>
+<h1>Speak. Listen. Practise. Switch languages.</h1>
+<p class="intro">A voice-training interface designed for global learners. Use your learning language to understand the lesson, then practise workplace communication in the language required for the job.</p>
+<div class="grid">
+<aside class="panel controls">
+<h3>Language setup</h3>
+<div class="field"><label>LEARNING LANGUAGE</label><select id="learn"><option>Hindi</option><option>English</option><option>Marathi</option><option>Bengali</option><option>Tamil</option></select></div>
+<div class="field"><label>WORKPLACE LANGUAGE</label><select id="work"><option>German</option><option>English</option><option>French</option><option>Hindi</option><option>Marathi</option></select></div>
+<div class="field"><label>VOICE STYLE</label><select id="voice"><option>Professional & friendly</option><option>Slow & clear</option><option>Practical coaching</option></select></div>
+<h3 style="margin-top:22px">Practice phrase</h3>
+<div class="langs">
+<button class="lang active" onclick="phrase(this,'Good morning. How can I help you?')">Greeting</button>
+<button class="lang" onclick="phrase(this,'Please explain the task.')">Clarify</button>
+<button class="lang" onclick="phrase(this,'Let us check the safety procedure.')">Safety</button>
+<button class="lang" onclick="phrase(this,'I have completed the work.')">Handover</button>
+</div>
+<div class="disclosure"><b>Prototype mode:</b> this page demonstrates the voice UX without an external speech API. Browser speech recognition/synthesis can be connected later through a local/open-source implementation.</div>
+</aside>
+<section class="panel voice">
+<div class="voice-top"><div class="ai"><div class="mini"><div class="face"></div></div><div><b>Aisha • AI Trainer</b><div style="font-size:11px;color:#738096">Multilingual workplace coach</div></div></div><div class="status">● Ready</div></div>
+<div class="stage">
+<div class="wave" id="wave"><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+<div class="statusline" id="status">Ready to practise</div>
+<div class="transcript" id="transcript">Select a phrase, then press <b>Listen</b>. Use <b>Speak</b> to simulate learner voice practice.</div>
+<div class="controls-row"><button class="big" onclick="listen()">🔊 Listen</button><button class="secondary" onclick="speak()">🎙 Speak</button><button class="secondary" onclick="stopVoice()">■ Stop</button></div>
+</div>
+<div class="feature-grid">
+<div class="feature"><b>🗣 Learning language</b><p>Trainer explanation can be delivered in the learner's chosen language.</p></div>
+<div class="feature"><b>🌍 Workplace language</b><p>Practice job-specific phrases in the language used at work.</p></div>
+<div class="feature"><b>↻ Repeat & slow</b><p>Replay difficult phrases and use a slower coaching mode.</p></div>
+</div>
+<div class="disclosure"><b>AI disclosure:</b> Aisha is an AI trainer, not a human. Voice practice should assess observable task communication only. WHYNZO should not infer personality, honesty, intelligence, emotion, mental state or employment suitability from a person's voice.</div>
+</section>
+</div>
+</main>
+<script>
+let selected='Good morning. How can I help you?';let timer;
+function phrase(el,text){document.querySelectorAll('.lang').forEach(x=>x.classList.remove('active'));el.classList.add('active');selected=text;document.getElementById('transcript').textContent='Selected phrase: '+text;document.getElementById('status').textContent='Phrase ready';}
+function listen(){
+ const learn=document.getElementById('learn').value,work=document.getElementById('work').value;
+ document.getElementById('status').textContent='AI trainer demonstration • '+work+' workplace practice';
+ document.getElementById('transcript').innerHTML='<b>'+learn+' explanation:</b> “'+selected+'”<br><br><b>Workplace practice:</b> repeat the phrase in '+work+'.';
+ if('speechSynthesis' in window){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(selected);u.lang=langCode(work);speechSynthesis.speak(u)}
+}
+function speak(){
+ document.getElementById('status').textContent='Listening… speak your practice phrase';
+ document.getElementById('transcript').textContent='Voice input simulation active. In the production version, this area will receive opted-in speech transcription locally.';
+}
+function stopVoice(){if('speechSynthesis'in window)speechSynthesis.cancel();document.getElementById('status').textContent='Stopped';}
+function langCode(x){return x==='German'?'de-DE':x==='French'?'fr-FR':x==='Hindi'?'hi-IN':x==='Marathi'?'mr-IN':'en-US'}
+document.querySelectorAll('select').forEach(s=>s.addEventListener('change',()=>{document.getElementById('status').textContent='Language setup updated';}));
+</script>
+</body>
+</html>
