@@ -128,6 +128,272 @@ footer{background:#06152f;color:#9fb4d3;padding:25px 0;font-size:12px}.foot{disp
 }
 
 .v11-language-card.selected-language{border-color:#13bfe9;box-shadow:0 0 0 2px #13bfe922,0 16px 30px #173f7518;transform:translateY(-4px)}
+
+/* ===== V12 HUMAN + LANGUAGE VISUAL POLISH ===== */
+:root{
+  --v12-ink:#09264d;
+  --v12-blue:#087cff;
+  --v12-cyan:#18d5ff;
+  --v12-violet:#735cff;
+  --v12-mint:#23e0ad;
+}
+
+/* Header: give the brand enough presence without changing the approved logo. */
+@media(max-width:650px){
+  header{position:sticky;top:0;z-index:9999}
+  .nav{height:60px;background:#fff}
+  .brandImg{width:150px!important;height:auto!important;object-fit:contain}
+}
+
+/* HERO: the globe must live INSIDE the hero artwork, never over the header. */
+.hero{overflow:hidden!important}
+.heroGrid{min-height:0!important}
+.heroCopy{position:relative;z-index:20}
+.heroVisual{
+  overflow:hidden!important;
+  clip-path:inset(0 round 0)!important;
+  min-height:0!important;
+  height:560px!important;
+  margin-top:0!important;
+}
+.heroVisual .heroCenter{
+  width:330px!important;height:330px!important;
+  top:53%!important;
+}
+.heroVisual .globe{width:330px!important;height:330px!important}
+.heroVisual .trainerCard{width:156px!important;height:224px!important}
+.heroVisual .trainerCard.left{left:2%!important;top:17%!important}
+.heroVisual .trainerCard.right{right:2%!important;top:12%!important}
+.heroVisual .heroBadge.one{left:5%!important;top:49%!important}
+.heroVisual .heroBadge.two{right:4%!important;top:48%!important}
+.heroVisual .heroBadge.three{right:10%!important;bottom:14%!important}
+.heroVisual:after{bottom:10px!important}
+@media(max-width:650px){
+  .heroCopy{padding-top:38px!important}
+  .heroVisual{
+    height:340px!important;
+    margin-top:8px!important;
+  }
+  .heroVisual .heroCenter{
+    width:230px!important;height:230px!important;
+    top:54%!important;
+  }
+  .heroVisual .globe{width:230px!important;height:230px!important}
+  .heroVisual .orbit{width:330px!important;height:108px!important}
+  .heroVisual .trainerCard{
+    width:105px!important;height:156px!important;
+    border-radius:20px!important;
+  }
+  .heroVisual .trainerCard.left{left:0!important;top:13%!important}
+  .heroVisual .trainerCard.right{right:0!important;top:9%!important}
+  .heroVisual .heroBadge{font-size:7px!important;padding:6px 8px!important}
+  .heroVisual .heroBadge.one{left:2%!important;top:53%!important}
+  .heroVisual .heroBadge.two{right:2%!important;top:52%!important}
+  .heroVisual .heroBadge.three{right:6%!important;bottom:7%!important}
+  .heroVisual:after{font-size:7px!important;bottom:2px!important}
+}
+
+/* Occupation cards: remove the toy/emoji feel and make them product-like. */
+.skillPic{font-size:0!important;position:relative;overflow:hidden}
+.skillPic:after{
+  content:"";
+  width:36px;height:36px;border-radius:12px;
+  background:linear-gradient(135deg,#087cff,#18d5ff);
+  box-shadow:0 8px 18px #087cff35;
+  display:block;
+}
+.skill:nth-child(1) .skillPic:before{content:"▣";position:absolute;color:#fff;font-size:19px;font-weight:900;z-index:2}
+.skill:nth-child(2) .skillPic:before{content:"✚";position:absolute;color:#fff;font-size:19px;font-weight:900;z-index:2}
+.skill:nth-child(3) .skillPic:before{content:"⌘";position:absolute;color:#fff;font-size:20px;font-weight:900;z-index:2}
+.skill:nth-child(4) .skillPic:before{content:"●";position:absolute;color:#fff;font-size:19px;font-weight:900;z-index:2}
+.skill:nth-child(5) .skillPic:before{content:"Y";position:absolute;color:#fff;font-size:20px;font-weight:950;z-index:2}
+.skill:nth-child(6) .skillPic:before{content:"ϟ";position:absolute;color:#fff;font-size:22px;font-weight:950;z-index:2}
+.skill:nth-child(7) .skillPic:before{content:"★";position:absolute;color:#fff;font-size:18px;font-weight:950;z-index:2}
+.skill:nth-child(8) .skillPic:before{content:"⌂";position:absolute;color:#fff;font-size:20px;font-weight:950;z-index:2}
+.skill:nth-child(9) .skillPic:before{content:"▥";position:absolute;color:#fff;font-size:20px;font-weight:950;z-index:2}
+.skill:nth-child(10) .skillPic:before{content:"✦";position:absolute;color:#fff;font-size:19px;font-weight:950;z-index:2}
+.skill:nth-child(11) .skillPic:before{content:"H";position:absolute;color:#fff;font-size:18px;font-weight:950;z-index:2}
+.skill:nth-child(12) .skillPic:before{content:"⌁";position:absolute;color:#fff;font-size:23px;font-weight:950;z-index:2}
+
+/* V12 language bridge */
+.v12-language{margin-top:58px}
+.v12-lang-bridge{
+  position:relative;min-height:310px;border-radius:28px;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 50%,#2bdcff32 0 8%,transparent 27%),
+    radial-gradient(circle at 18% 40%,#7c5cff28 0 12%,transparent 32%),
+    linear-gradient(115deg,#061a3d,#0a4a91 54%,#27156b);
+  border:1px solid #ffffff2a;
+  box-shadow:0 25px 65px #08244d22;
+}
+.v12-lang-bridge:before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(#ffffff25 1px,transparent 1px);
+  background-size:25px 25px;opacity:.22;
+}
+.v12-lang-node{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:29%;min-height:190px;border-radius:24px;
+  padding:20px;color:#fff;z-index:3;
+  border:1px solid #ffffff35;background:#ffffff12;
+  backdrop-filter:blur(12px);
+}
+.v12-lang-node.left{left:3%}
+.v12-lang-node.right{right:3%}
+.v12-lang-node .node-kicker{
+  font-size:9px;font-weight:950;letter-spacing:.12em;color:#7cecff
+}
+.v12-lang-node h3{margin:8px 0 3px;font-size:22px}
+.v12-lang-node .native{font-size:15px;font-weight:900;color:#fff}
+.v12-speech{
+  margin-top:18px;padding:10px 12px;border-radius:14px;
+  background:#fff;color:#12315b;font-size:11px;font-weight:800;
+  position:relative;box-shadow:0 10px 25px #00142e35
+}
+.v12-speech:after{
+  content:"";position:absolute;bottom:-7px;left:28px;border:7px solid transparent;
+  border-top-color:#fff;border-bottom:0
+}
+.v12-node-meta{margin-top:15px;font-size:9px;color:#c9ddf5}
+.v12-lang-core{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:160px;height:160px;border-radius:50%;z-index:4;
+  display:grid;place-items:center;text-align:center;color:#fff;
+  background:radial-gradient(circle at 35% 28%,#8ef5ff,#2a9eff 25%,#154b9b 55%,#0a1e50 75%);
+  box-shadow:0 0 70px #18d5ff55, inset 0 0 25px #ffffff22;
+  border:1px solid #9aefff66;
+}
+.v12-lang-core:before,.v12-lang-core:after{
+  content:"";position:absolute;inset:-22px;border:1px solid #55e8ff80;
+  border-radius:50%;transform:rotate(22deg) scaleY(.32)
+}
+.v12-lang-core:after{inset:-38px;transform:rotate(-30deg) scaleY(.24)}
+.v12-lang-core b{font-size:18px;display:block}
+.v12-lang-core span{font-size:8px;letter-spacing:.12em;font-weight:900;color:#c9faff}
+.v12-lang-pill{
+  position:absolute;z-index:5;padding:8px 11px;border-radius:999px;
+  background:#fff;color:#16345f;font-size:10px;font-weight:900;
+  box-shadow:0 10px 24px #00142e40
+}
+.v12-lang-pill.p1{left:35%;top:16%}.v12-lang-pill.p2{right:34%;top:15%}
+.v12-lang-pill.p3{left:35%;bottom:15%}.v12-lang-pill.p4{right:32%;bottom:14%}
+.v12-lang-arrow{
+  position:absolute;z-index:2;left:50%;top:50%;width:39%;height:2px;
+  transform:translate(-50%,-50%);background:linear-gradient(90deg,#5feaff,#fff,#8d7cff);
+  box-shadow:0 0 16px #35ddff88
+}
+.v12-lang-caption{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  z-index:6;white-space:nowrap;color:#dff9ff;font-size:10px;font-weight:900;
+  letter-spacing:.06em
+}
+.v12-language-list{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:14px
+}
+.v12-language-choice{
+  border:1px solid #d9e5f3;background:#fff;border-radius:16px;padding:11px;
+  cursor:pointer;transition:.2s;box-shadow:0 8px 20px #153b6c0b
+}
+.v12-language-choice:hover,.v12-language-choice.active{
+  transform:translateY(-3px);border-color:#18c9ed;box-shadow:0 12px 26px #087cff18
+}
+.v12-language-choice .code{
+  font-size:10px;font-weight:950;color:#087cff;letter-spacing:.08em
+}
+.v12-language-choice strong{display:block;margin-top:4px;font-size:12px;color:#12345f}
+.v12-language-choice small{display:block;margin-top:2px;color:#6c7b91;font-size:10px}
+@media(max-width:900px){.v12-language-list{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){
+  .v12-language{margin-top:42px}
+  .v12-lang-bridge{min-height:480px;border-radius:22px}
+  .v12-lang-node{width:41%;min-height:158px;padding:14px;border-radius:18px}
+  .v12-lang-node.left{left:3%;top:34%}.v12-lang-node.right{right:3%;top:34%}
+  .v12-lang-node h3{font-size:16px}.v12-lang-node .native{font-size:12px}
+  .v12-speech{font-size:9px;padding:8px;margin-top:12px}
+  .v12-lang-core{width:120px;height:120px;top:55%}
+  .v12-lang-core b{font-size:14px}.v12-lang-core span{font-size:7px}
+  .v12-lang-pill{font-size:8px;padding:7px 9px}
+  .v12-lang-pill.p1{left:5%;top:12%}.v12-lang-pill.p2{right:5%;top:12%}
+  .v12-lang-pill.p3{left:7%;bottom:17%}.v12-lang-pill.p4{right:6%;bottom:17%}
+  .v12-lang-arrow{width:35%;top:52%}
+  .v12-lang-caption{font-size:7px;bottom:8px}
+  .v12-language-list{grid-template-columns:repeat(2,1fr);gap:8px}
+}
+
+/* V12 trainer studio: people first, technology second. */
+.v12-trainer-stage{
+  position:relative;min-height:455px;border-radius:28px;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 35%,#20d7ff30 0 9%,transparent 28%),
+    linear-gradient(135deg,#071b43,#0b4a88 58%,#151052);
+  border:1px solid #ffffff20;box-shadow:0 22px 55px #0a28532b;
+}
+.v12-trainer-stage .stage-kicker{position:absolute;left:22px;top:20px;color:#82eeff;font-size:10px;font-weight:950;letter-spacing:.12em;z-index:8}
+.v12-trainer-stage .stage-title{position:absolute;left:22px;top:43px;color:#fff;font-size:23px;font-weight:950;z-index:8}
+.v12-person{
+  position:absolute;bottom:0;width:39%;height:360px;z-index:5;
+}
+.v12-person.left{left:2%}.v12-person.right{right:2%}
+.v12-person .portrait{
+  position:absolute;left:50%;bottom:26px;transform:translateX(-50%);
+  width:175px;height:275px
+}
+.v12-person .person-shadow{
+  position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+  width:185px;height:34px;border-radius:50%;background:#0006;filter:blur(7px)
+}
+.v12-person .tag{
+  position:absolute;bottom:17px;left:50%;transform:translateX(-50%);
+  white-space:nowrap;padding:8px 12px;border-radius:999px;background:#fff;color:#10315b;
+  font-size:9px;font-weight:950;box-shadow:0 12px 25px #00142e45;z-index:10
+}
+.v12-person .bubble{
+  position:absolute;top:88px;left:50%;transform:translateX(-50%);
+  width:145px;padding:10px;border-radius:15px;background:#ffffffee;color:#16345f;
+  font-size:9px;font-weight:800;box-shadow:0 12px 26px #00142e35;z-index:10
+}
+.v12-person.right .bubble{top:72px}
+.v12-person .bubble:after{
+  content:"";position:absolute;bottom:-7px;left:28px;border:7px solid transparent;border-top-color:#fff;border-bottom:0
+}
+.v12-stage-core{
+  position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);
+  width:150px;height:150px;border-radius:50%;z-index:3;
+  background:radial-gradient(circle at 35% 28%,#9ff7ff,#27a8ff 30%,#174b9a 58%,#0b1e4e 76%);
+  box-shadow:0 0 70px #1ad9ff4a
+}
+.v12-stage-core:before,.v12-stage-core:after{
+  content:"";position:absolute;inset:-18px;border:1px solid #58eaff77;border-radius:50%;
+  transform:rotate(24deg) scaleY(.3)
+}
+.v12-stage-core:after{inset:-31px;transform:rotate(-35deg) scaleY(.23)}
+.v12-stage-core span{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:95px;text-align:center;color:#fff;font-size:9px;font-weight:950;line-height:1.4
+}
+.v12-stage-core b{font-size:14px;display:block}
+@media(max-width:650px){
+  .v12-trainer-stage{min-height:410px;border-radius:22px}
+  .v12-trainer-stage .stage-title{font-size:18px;top:40px}
+  .v12-person{width:43%;height:300px}
+  .v12-person .portrait{width:125px;height:198px}
+  .v12-person .person-shadow{width:130px}
+  .v12-person .tag{font-size:7px;padding:7px 9px}
+  .v12-person .bubble{width:110px;font-size:7px;padding:8px;top:68px}
+  .v12-person.right .bubble{top:58px}
+  .v12-stage-core{width:110px;height:110px;top:54%}
+  .v12-stage-core span{font-size:7px;width:75px}.v12-stage-core b{font-size:11px}
+}
+
+/* Improve AI live panel avatar proportions on small screens. */
+@media(max-width:650px){
+  .aiPerson{min-height:235px!important}
+  .trainerPortrait{height:235px!important}
+}
+
+/* Never let decorative hero/language artwork cover interactive content. */
+header,.section,.v12-language,.v12-trainer-stage{position:relative}
+
 </style>
 
 <style id="whynzo-v7-upgrade">
@@ -374,64 +640,145 @@ footer{background:#06152f;color:#9fb4d3;padding:25px 0;font-size:12px}.foot{disp
 <section class="section reveal" id="countries"><div class="wrap how"><div><div class="titleRow"><h2>Choose Your Country</h2><a class="view" href="#">View All →</a></div><div class="countryGrid"><div class="country"><span class="flag">🇺🇸</span>USA</div><div class="country"><span class="flag">🇨🇦</span>Canada</div><div class="country"><span class="flag">🇬🇧</span>UK</div><div class="country"><span class="flag">🇩🇪</span>Germany</div><div class="country"><span class="flag">🇦🇺</span>Australia</div><div class="country"><span class="flag">🇦🇪</span>UAE</div><div class="country"><span class="flag">🇸🇬</span>Singapore</div></div></div>
 <div><div class="titleRow"><h2>How It Works</h2></div><div class="steps"><div class="step"><span class="num">1</span><h3>Choose Your Skill</h3><p>Select an occupation and level.</p></div><div class="step"><span class="num">2</span><h3>Talk with AI Trainer</h3><p>Learn interactively.</p></div><div class="step"><span class="num">3</span><h3>Watch Demonstrations</h3><p>See practical examples.</p></div><div class="step"><span class="num">4</span><h3>Practice Real Scenarios</h3><p>Handle workplace tasks.</p></div><div class="step"><span class="num">5</span><h3>Get Feedback & Improve</h3><p>Target weak areas.</p></div><div class="step"><span class="num">6</span><h3>Be Job Ready</h3><p>Build observable skill evidence.</p></div></div></div></div></section>
 
-<section class="wrap v11-language-section" id="language-explorer">
+
+<section class="wrap v12-language" id="language-explorer">
   <div class="v11-section-head">
-    <div><h2>Learn in Your Language</h2><p>Understand concepts in your language. Practice the language you need at work.</p></div>
+    <div>
+      <h2>One Skill. Your Language. The Workplace Language.</h2>
+      <p>Learn concepts in the language you understand best, then practise the language used on the job.</p>
+    </div>
     <a href="#language-explorer" style="font-weight:850;color:#087cff;font-size:13px">Explore Languages →</a>
   </div>
-  <div class="v11-lang-visual">
-  <div class="wave"></div>
-  <div class="core">WHYNZO<br><small>LANGUAGE STUDIO</small></div>
-  <div class="v11-lang-bubble a"><b>अ</b> हिन्दी</div>
-  <div class="v11-lang-bubble b"><b>अ</b> मराठी</div>
-  <div class="v11-lang-bubble c"><b>A</b> English</div>
-  <div class="v11-lang-bubble d"><b>文</b> Deutsch</div>
-  <div class="v11-lang-bubble e"><b>الع</b> العربية</div>
-  <div class="v11-lang-bubble f"><b>ES</b> Español</div>
-</div>
-<div class="v11-language-grid">
-    <div class="v11-language-card" data-language="Hindi"><div class="v11-lang-top"><div class="v11-lang-badge">🇮🇳</div><div><strong>Hindi</strong><span class="native">हिन्दी</span></div></div><div class="use">Learn • Explain • Practice</div></div>
-    <div class="v11-language-card" data-language="Marathi"><div class="v11-lang-top"><div class="v11-lang-badge">🇮🇳</div><div><strong>Marathi</strong><span class="native">मराठी</span></div></div><div class="use">Learn • Explain • Practice</div></div>
-    <div class="v11-language-card" data-language="English"><div class="v11-lang-top"><div class="v11-lang-badge">🇬🇧</div><div><strong>English</strong><span class="native">English</span></div></div><div class="use">Global workplace</div></div>
-    <div class="v11-language-card" data-language="German"><div class="v11-lang-top"><div class="v11-lang-badge">🇩🇪</div><div><strong>German</strong><span class="native">Deutsch</span></div></div><div class="use">Workplace practice</div></div>
-    <div class="v11-language-card" data-language="Spanish"><div class="v11-lang-top"><div class="v11-lang-badge">🇪🇸</div><div><strong>Spanish</strong><span class="native">Español</span></div></div><div class="use">Learn • Practice</div></div>
-    <div class="v11-language-card" data-language="French"><div class="v11-lang-top"><div class="v11-lang-badge">🇫🇷</div><div><strong>French</strong><span class="native">Français</span></div></div><div class="use">Learn • Practice</div></div>
-    <div class="v11-language-card" data-language="Arabic"><div class="v11-lang-top"><div class="v11-lang-badge">🇦🇪</div><div><strong>Arabic</strong><span class="native">العربية</span></div></div><div class="use">Workplace practice</div></div>
-    <div class="v11-language-card" data-language="Bengali"><div class="v11-lang-top"><div class="v11-lang-badge">🇧🇩</div><div><strong>Bengali</strong><span class="native">বাংলা</span></div></div><div class="use">Learn • Practice</div></div>
-    <div class="v11-language-card" data-language="Tamil"><div class="v11-lang-top"><div class="v11-lang-badge">🇮🇳</div><div><strong>Tamil</strong><span class="native">தமிழ்</span></div></div><div class="use">Learn • Practice</div></div>
-    <div class="v11-language-card" data-language="Telugu"><div class="v11-lang-top"><div class="v11-lang-badge">🇮🇳</div><div><strong>Telugu</strong><span class="native">తెలుగు</span></div></div><div class="use">Learn • Practice</div></div>
-    <div class="v11-language-card" data-language="Portuguese"><div class="v11-lang-top"><div class="v11-lang-badge">🇵🇹</div><div><strong>Portuguese</strong><span class="native">Português</span></div></div><div class="use">Learn • Practice</div></div>
-    <div class="v11-language-card" data-language="Bahasa"><div class="v11-lang-top"><div class="v11-lang-badge">🌏</div><div><strong>Bahasa</strong><span class="native">Indonesia</span></div></div><div class="use">Learn • Practice</div></div>
+
+  <div class="v12-lang-bridge">
+    <div class="v12-lang-node left">
+      <div class="node-kicker">LEARN & UNDERSTAND</div>
+      <h3>Hindi</h3><div class="native">हिन्दी</div>
+      <div class="v12-speech">“समझिए कि ग्राहक से सही तरीके से कैसे बात करनी है।”</div>
+      <div class="v12-node-meta">Explanation • examples • guided practice</div>
+    </div>
+
+    <div class="v12-lang-arrow"></div>
+    <div class="v12-lang-core"><div><b>WHYNZO</b><span>LANGUAGE BRIDGE</span></div></div>
+    <div class="v12-lang-pill p1">हिन्दी</div>
+    <div class="v12-lang-pill p2">Deutsch</div>
+    <div class="v12-lang-pill p3">मराठी</div>
+    <div class="v12-lang-pill p4">English</div>
+
+    <div class="v12-lang-node right">
+      <div class="node-kicker">PRACTISE AT WORK</div>
+      <h3>German</h3><div class="native">Deutsch</div>
+      <div class="v12-speech">“Guten Tag. Wie kann ich Ihnen helfen?”</div>
+      <div class="v12-node-meta">Workplace terms • role-play • spoken practice</div>
+    </div>
+
+    <div class="v12-lang-caption">LEARN IN YOUR LANGUAGE → PRACTISE THE LANGUAGE YOU NEED → PROVE THE SKILL</div>
   </div>
-  <div class="v11-language-note"><div><b>WHYNZO Multilingual Mode</b><br><span class="example">Example: <span>Electrician • Germany • Learn in Hindi → Practice German workplace terms → Prove the skill</span></span></div><div style="font-size:12px;font-weight:850;white-space:nowrap">Any Skill • Any Country • Your Language</div></div>
+
+  <div class="v12-language-list">
+    <button class="v12-language-choice active" data-v12-lang="Hindi"><span class="code">HI</span><strong>Hindi</strong><small>हिन्दी</small></button>
+    <button class="v12-language-choice" data-v12-lang="Marathi"><span class="code">MR</span><strong>Marathi</strong><small>मराठी</small></button>
+    <button class="v12-language-choice" data-v12-lang="English"><span class="code">EN</span><strong>English</strong><small>English</small></button>
+    <button class="v12-language-choice" data-v12-lang="German"><span class="code">DE</span><strong>German</strong><small>Deutsch</small></button>
+    <button class="v12-language-choice" data-v12-lang="Spanish"><span class="code">ES</span><strong>Spanish</strong><small>Español</small></button>
+    <button class="v12-language-choice" data-v12-lang="French"><span class="code">FR</span><strong>French</strong><small>Français</small></button>
+    <button class="v12-language-choice" data-v12-lang="Arabic"><span class="code">AR</span><strong>Arabic</strong><small>العربية</small></button>
+    <button class="v12-language-choice" data-v12-lang="Bengali"><span class="code">BN</span><strong>Bengali</strong><small>বাংলা</small></button>
+    <button class="v12-language-choice" data-v12-lang="Tamil"><span class="code">TA</span><strong>Tamil</strong><small>தமிழ்</small></button>
+    <button class="v12-language-choice" data-v12-lang="Telugu"><span class="code">TE</span><strong>Telugu</strong><small>తెలుగు</small></button>
+    <button class="v12-language-choice" data-v12-lang="Portuguese"><span class="code">PT</span><strong>Portuguese</strong><small>Português</small></button>
+    <button class="v12-language-choice" data-v12-lang="Bahasa"><span class="code">ID</span><strong>Bahasa</strong><small>Indonesia</small></button>
+  </div>
+
+  <div class="v11-language-note">
+    <div><b>WHYNZO Multilingual Mode</b><br><span class="example">Example: <span>Electrician • Germany • Learn in Hindi → practise German workplace terms → prove the skill</span></span></div>
+    <div style="font-size:12px;font-weight:850;white-space:nowrap">Any Skill • Any Country • Your Language</div>
+  </div>
 </section>
+
 
 
 <section class="wrap v11-ai-section" id="ai-trainers">
-  <div class="v11-section-head"><div><h2>Meet Your AI Trainers</h2><p>Human-like visual trainers built for learning, practice and workplace role-play.</p></div><span style="font-size:12px;font-weight:850;color:#087cff">AI • Clearly disclosed</span></div>
-  <div class="v11-ai-grid">
-    <div class="v11-ai-stage">
-      <div class="v11-stage-title"><b>AI TRAINER STUDIO</b><strong>Choose who guides you.</strong></div>
-      <div class="v11-ai-orb"></div>
-      <div class="v11-avatar left">
-        <div class="hair"></div><div class="head"></div><div class="ear l"></div><div class="ear r"></div><div class="brow l"></div><div class="brow r"></div><div class="eye l"></div><div class="eye r"></div><div class="nose"></div><div class="mouth"></div><div class="neck"></div><div class="body"></div><div class="jacket"></div><div class="shirt"></div><div class="necklace"></div><div class="shoulder"></div><div class="v11-avatar-tag">AISHA • AI TRAINER</div>
-      </div>
-      <div class="v11-avatar right">
-        <div class="hair"></div><div class="head"></div><div class="ear l"></div><div class="ear r"></div><div class="brow l"></div><div class="brow r"></div><div class="eye l"></div><div class="eye r"></div><div class="nose"></div><div class="mouth"></div><div class="neck"></div><div class="body"></div><div class="jacket"></div><div class="shirt"></div><div class="necklace"></div><div class="shoulder"></div><div class="v11-avatar-tag">ARJUN • AI TRAINER</div>
-      </div>
+  <div class="v11-section-head">
+    <div>
+      <h2>Meet Your AI Trainers</h2>
+      <p>Human-like visual trainers for learning, practice and workplace role-play.</p>
     </div>
-    <div class="v11-ai-copy">
-      <h3>Not just a chatbot.</h3>
-      <p>Your trainer explains, demonstrates, asks questions, runs realistic workplace practice and adapts the next lesson based on what you need to improve.</p>
-      <div class="v11-trainer-card"><div class="v11-mini-avatar"></div><div><strong>Aisha • Friendly Coach</strong><span>Sales • Customer Service • Hospitality</span></div></div>
-      <div class="v11-trainer-card"><div class="v11-mini-avatar" style="background:linear-gradient(145deg,#d9eaff,#b99aff)"></div><div><strong>Arjun • Practical Coach</strong><span>Trades • Transport • Technical Skills</span></div></div>
-      <div class="v11-tags"><span class="v11-tag">◉ Voice Practice</span><span class="v11-tag">🌍 Multilingual</span><span class="v11-tag">◈ Role-play</span><span class="v11-tag">↗ Adaptive Training</span></div>
-      <div class="v11-ai-disclosure"><b>AI disclosure:</b> Aisha and Arjun are AI trainers, not human employees or licensed professionals. Their role is to support learning and practice.</div>
+    <span style="font-size:12px;font-weight:850;color:#087cff">AI • Clearly disclosed</span>
+  </div>
+
+  <div class="v12-trainer-stage">
+    <div class="stage-kicker">AI TRAINER STUDIO</div>
+    <div class="stage-title">Choose who guides you.</div>
+
+    <div class="v12-stage-core"><span><b>WHYNZO</b>AI TRAINING<br>ENGINE</span></div>
+
+    <div class="v12-person left">
+      <div class="person-shadow"></div>
+      <div class="bubble">“Let's practise a real customer conversation together.”</div>
+      <div class="portrait">
+        <svg viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg" aria-label="Aisha AI trainer">
+          <defs>
+            <linearGradient id="aSkin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd8c6"/><stop offset="1" stop-color="#c98269"/></linearGradient>
+            <linearGradient id="aHair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#15172c"/><stop offset="1" stop-color="#5b3154"/></linearGradient>
+            <linearGradient id="aJacket" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#19cfff"/><stop offset="1" stop-color="#5d5bf2"/></linearGradient>
+          </defs>
+          <ellipse cx="110" cy="292" rx="72" ry="8" fill="#00142e" opacity=".35"/>
+          <path d="M44 292c7-64 28-93 66-93s59 29 66 93z" fill="url(#aJacket)"/>
+          <path d="M76 199h68l-7 32H83z" fill="#ffd8c6"/>
+          <ellipse cx="110" cy="125" rx="52" ry="68" fill="url(#aSkin)"/>
+          <path d="M59 126C48 66 77 28 110 28c37 0 65 37 52 100-6-22-20-39-43-48-16 18-34 24-60 19z" fill="url(#aHair)"/>
+          <path d="M61 123c-8 20-4 46 8 60M159 123c8 20 4 46-8 60" fill="none" stroke="#4c2943" stroke-width="11" stroke-linecap="round"/>
+          <ellipse cx="89" cy="127" rx="5" ry="3.5" fill="#16223d"/><ellipse cx="131" cy="127" rx="5" ry="3.5" fill="#16223d"/>
+          <path d="M80 112q9-7 18 0M122 112q9-7 18 0" fill="none" stroke="#573a37" stroke-width="3" stroke-linecap="round"/>
+          <path d="M104 143q6 4 12 0" fill="none" stroke="#9a4f54" stroke-width="3" stroke-linecap="round"/>
+          <path d="M92 199l18 18 18-18" fill="#fff"/>
+          <path d="M90 208l-23 54M130 208l23 54" stroke="#e8fbff" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="110" cy="219" r="4" fill="#18d5ff"/>
+        </svg>
+      </div>
+      <div class="tag">AISHA • AI TRAINER</div>
+    </div>
+
+    <div class="v12-person right">
+      <div class="person-shadow"></div>
+      <div class="bubble">“I’ll break the task into steps, then you try it.”</div>
+      <div class="portrait">
+        <svg viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg" aria-label="Arjun AI trainer">
+          <defs>
+            <linearGradient id="mSkin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e9ae8e"/><stop offset="1" stop-color="#9f624f"/></linearGradient>
+            <linearGradient id="mHair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111523"/><stop offset="1" stop-color="#3d2b2c"/></linearGradient>
+            <linearGradient id="mJacket" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#162f6b"/><stop offset="1" stop-color="#1598c8"/></linearGradient>
+          </defs>
+          <ellipse cx="110" cy="292" rx="72" ry="8" fill="#00142e" opacity=".35"/>
+          <path d="M44 292c7-64 28-93 66-93s59 29 66 93z" fill="url(#mJacket)"/>
+          <path d="M80 199h60l-6 34H86z" fill="url(#mSkin)"/>
+          <ellipse cx="110" cy="124" rx="51" ry="67" fill="url(#mSkin)"/>
+          <path d="M59 113C56 62 77 28 111 28c38 0 56 34 50 84-13-16-26-27-45-31-17 8-35 12-57 5z" fill="url(#mHair)"/>
+          <path d="M60 115c-7 18-5 40 7 54M160 115c7 18 5 40-7 54" fill="none" stroke="#2a2025" stroke-width="10" stroke-linecap="round"/>
+          <path d="M79 112q10-7 20 0M121 112q10-7 20 0" fill="none" stroke="#4a332d" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="89" cy="126" rx="5" ry="3.5" fill="#142039"/><ellipse cx="131" cy="126" rx="5" ry="3.5" fill="#142039"/>
+          <path d="M105 143q5 4 10 0" fill="none" stroke="#7e4c43" stroke-width="3" stroke-linecap="round"/>
+          <path d="M86 201l24 24 24-24" fill="#fff"/>
+          <path d="M88 208l-20 52M132 208l20 52" stroke="#d7f6ff" stroke-width="8" stroke-linecap="round"/>
+          <path d="M91 206h38" stroke="#18d5ff" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="tag">ARJUN • AI TRAINER</div>
     </div>
   </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px">
+    <div class="v11-tag" style="text-align:center">Voice Practice</div>
+    <div class="v11-tag" style="text-align:center">Multilingual</div>
+    <div class="v11-tag" style="text-align:center">Role-play</div>
+    <div class="v11-tag" style="text-align:center">Adaptive Training</div>
+  </div>
+  <div class="v11-ai-disclosure"><b>AI disclosure:</b> Aisha and Arjun are AI trainers, not human employees or licensed professionals. Their role is to support learning and practice.</div>
 </section>
 
-<section class="section reveal" id="trainer"><div class="wrap"><div class="titleRow"><h2>Live Conversation with AI Trainer</h2><span class="view">● AI Trainer • Clearly disclosed</span></div>
+<section class="section reveal" id="trainer">
+<div class="wrap"><div class="titleRow"><h2>Live Conversation with AI Trainer</h2><span class="view">● AI Trainer • Clearly disclosed</span></div>
 <div class="aiGrid"><div class="aiPanel"><div class="aiPerson"><div class="trainerPortrait"><svg class="humanSvg" viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg" aria-label="Original AI trainer illustration">
 <defs>
  <linearGradient id="skf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd9c8"/><stop offset="1" stop-color="#e9a58f"/></linearGradient>
@@ -504,6 +851,41 @@ stats.forEach(el=>{
       note.innerHTML=base;
     }
   }
+})();
+</script>
+
+
+<script>
+(function(){
+  const choices=[...document.querySelectorAll('.v12-language-choice')];
+  const bridge=document.querySelector('.v12-lang-bridge');
+  const headerLang=document.querySelector('.language-pill span:nth-child(2)');
+  const leftNode=bridge?.querySelector('.v12-lang-node.left h3');
+  const leftNative=bridge?.querySelector('.v12-lang-node.left .native');
+  const leftSpeech=bridge?.querySelector('.v12-lang-node.left .v12-speech');
+  const map={
+    Hindi:{native:'हिन्दी',speech:'“ग्राहक से सही तरीके से कैसे बात करनी है, चलिए अभ्यास करते हैं।”'},
+    Marathi:{native:'मराठी',speech:'“चला, ग्राहक संभाषणाचा सराव करूया.”'},
+    English:{native:'English',speech:'“Let’s practise a real workplace conversation.”'},
+    German:{native:'Deutsch',speech:'“Lassen Sie uns ein echtes Arbeitsplatzgespräch üben.”'},
+    Spanish:{native:'Español',speech:'“Practiquemos una conversación real de trabajo.”'},
+    French:{native:'Français',speech:'“Pratiquons une vraie conversation professionnelle.”'},
+    Arabic:{native:'العربية',speech:'“دعنا نتدرّب على محادثة حقيقية في مكان العمل.”'},
+    Bengali:{native:'বাংলা',speech:'“চলুন একটি বাস্তব কর্মক্ষেত্রের কথোপকথন অনুশীলন করি।”'},
+    Tamil:{native:'தமிழ்',speech:'“ஒரு உண்மையான பணியிட உரையாடலைப் பயிற்சி செய்வோம்.”'},
+    Telugu:{native:'తెలుగు',speech:'“నిజమైన పని ప్రదేశ సంభాషణను అభ్యసిద్దాం.”'},
+    Portuguese:{native:'Português',speech:'“Vamos praticar uma conversa real de trabalho.”'},
+    Bahasa:{native:'Bahasa Indonesia',speech:'“Mari berlatih percakapan kerja yang nyata.”'}
+  };
+  choices.forEach(c=>c.addEventListener('click',()=>{
+    choices.forEach(x=>x.classList.remove('active'));
+    c.classList.add('active');
+    const lang=c.dataset.v12Lang, d=map[lang]||map.English;
+    if(headerLang) headerLang.textContent=lang;
+    if(leftNode) leftNode.textContent=lang;
+    if(leftNative) leftNative.textContent=d.native;
+    if(leftSpeech) leftSpeech.textContent=d.speech;
+  }));
 })();
 </script>
 
