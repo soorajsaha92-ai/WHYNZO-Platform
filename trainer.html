@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WHYNZOJOBS — AI Trainer Studio</title>
+<style>
+:root{
+  --ink:#14213d;--muted:#68738a;--bg:#f5f7fc;--card:#fff;--line:#e5e9f2;
+  --blue:#2563eb;--purple:#7c3aed;--cyan:#06b6d4;--green:#16a34a;
+  --shadow:0 16px 45px rgba(30,43,80,.10);--radius:22px;
+}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+button,select{font:inherit} button{cursor:pointer}
+.top{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:21px;letter-spacing:-.5px}.mark{width:37px;height:37px;border-radius:12px;background:linear-gradient(135deg,#06b6d4,#2563eb 55%,#7c3aed);display:grid;place-items:center;color:white;font-weight:1000;font-size:20px;box-shadow:0 8px 18px #2563eb30}.brand small{display:block;color:#6b7280;font-size:9px;letter-spacing:1.5px;margin-top:-2px}
+.back{border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 15px;border-radius:12px;font-weight:700}
+.wrap{width:min(1240px,92%);margin:30px auto 55px}
+.head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}.head h1{font-size:clamp(30px,4vw,48px);margin:0 0 7px;letter-spacing:-1.5px}.head p{margin:0;color:var(--muted);max-width:720px}.ai-badge{display:inline-flex;align-items:center;gap:7px;background:#eef2ff;color:#4f46e5;padding:8px 12px;border-radius:999px;font-size:12px;font-weight:800;margin-bottom:10px}.dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px #22c55e22}
+.grid{display:grid;grid-template-columns:350px 1fr;gap:20px}.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.controls{padding:20px}.controls h3,.chat h3{margin:0 0 15px}.field{margin-bottom:16px}.field label{display:block;font-size:12px;font-weight:800;color:#59657c;margin-bottom:7px}.field select{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);outline:none}.field select:focus{border-color:#8daafc;box-shadow:0 0 0 3px #2563eb12}
+.trainers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}.trainer{border:2px solid var(--line);background:#fff;border-radius:17px;padding:10px;text-align:left;transition:.2s}.trainer.active{border-color:#2563eb;background:#f3f7ff}.avatar{height:115px;border-radius:13px;position:relative;overflow:hidden;margin-bottom:8px;background:linear-gradient(145deg,#dbeafe,#ede9fe)}.face{position:absolute;width:65px;height:72px;border-radius:45% 45% 48% 48%;left:50%;top:22px;transform:translateX(-50%);background:linear-gradient(145deg,#9b5e42,#d59a78);box-shadow:0 -18px 0 7px #2b211e}.female .face{box-shadow:0 -15px 0 11px #241e29, -24px 5px 0 4px #241e29,24px 5px 0 4px #241e29}.face:before{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#20212b;left:17px;top:31px;box-shadow:24px 0 #20212b}.face:after{content:"";position:absolute;width:25px;height:8px;border-bottom:2px solid #6b3027;border-radius:50%;left:20px;top:48px}.body{position:absolute;width:125px;height:72px;border-radius:55px 55px 0 0;left:50%;transform:translateX(-50%);top:91px;background:linear-gradient(135deg,#fff,#dbeafe);border:1px solid #ffffffaa}.trainer b{font-size:13px}.trainer span{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.scenarios{display:flex;flex-wrap:wrap;gap:7px}.chip{border:1px solid var(--line);background:#fafbfe;padding:8px 10px;border-radius:999px;font-size:11px;font-weight:700;color:#4b5870}.chip.active{background:#eef4ff;border-color:#9db9ff;color:#1d4ed8}
+.chat{min-height:650px;display:flex;flex-direction:column;overflow:hidden}.chat-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.trainer-mini{display:flex;align-items:center;gap:10px}.mini{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,#dbeafe,#ede9fe);position:relative;overflow:hidden}.mini .face{width:25px;height:29px;top:10px;box-shadow:0 -7px 0 3px #2b211e}.mini .face:before{width:3px;height:3px;left:7px;top:12px;box-shadow:9px 0 #20212b}.mini .face:after{width:10px;height:4px;left:8px;top:20px}.status{font-size:11px;color:#16a34a;font-weight:800}
+.messages{padding:20px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:390px;overflow:auto;background:linear-gradient(180deg,#fbfcff,#f7f9fd)}.msg{max-width:78%;padding:13px 15px;border-radius:17px;line-height:1.5;font-size:14px}.trainer-msg{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:5px}.user-msg{background:linear-gradient(135deg,#2563eb,#6045db);color:#fff;align-self:flex-end;border-bottom-right-radius:5px}.msg small{display:block;font-size:10px;opacity:.65;margin-bottom:4px;font-weight:800}
+.quick{padding:12px 20px;border-top:1px solid var(--line);display:flex;gap:8px;flex-wrap:wrap}.quick button{background:#f1f5ff;border:1px solid #dbe4ff;color:#234da7;padding:8px 11px;border-radius:10px;font-size:11px;font-weight:800}
+.composer{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:9px}.composer input{flex:1;border:1px solid var(--line);border-radius:13px;padding:13px;outline:none}.composer button{border:0;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:0 18px;border-radius:13px;font-weight:900}
+.actions{display:flex;gap:8px;margin-top:14px}.action{flex:1;border:1px solid var(--line);background:#fff;border-radius:12px;padding:11px;font-size:12px;font-weight:800}.primary{background:#14213d;color:#fff;border-color:#14213d}
+.feedback{margin-top:20px;padding:18px}.feedback h3{margin:0 0 13px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:13px}.metric b{font-size:19px}.metric span{display:block;font-size:10px;color:var(--muted);margin-top:3px}.next{margin-top:13px;padding:12px;border-radius:13px;background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;font-size:12px;font-weight:700}
+.note{margin-top:15px;color:#778198;font-size:10px;line-height:1.5}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.chat{min-height:600px}.head{align-items:start;flex-direction:column}.top{padding:0 4%}}
+@media(max-width:520px){.wrap{width:94%;margin-top:20px}.top{height:64px}.brand{font-size:17px}.grid{gap:14px}.metrics{grid-template-columns:1fr 1fr}.metric:last-child{grid-column:span 2}.messages{min-height:350px}.msg{max-width:90%}.composer{padding:12px}.composer button{padding:0 14px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><div class="mark">W</div><div>WHYNZO<small>LEARN • PRACTICE • PROVE</small></div></div>
+  <button class="back" onclick="location.href='learner.html'">← Learner Dashboard</button>
+</header>
+
+<main class="wrap">
+  <div class="head">
+    <div>
+      <div class="ai-badge"><span class="dot"></span> AI TRAINER STUDIO</div>
+      <h1>Practice with a trainer that adapts to you.</h1>
+      <p>Choose an AI trainer, your learning language and workplace language. Ask questions, replay explanations, role-play real situations and receive feedback on observable training actions.</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    <aside class="panel controls">
+      <h3>Trainer & learning setup</h3>
+      <div class="trainers">
+        <button class="trainer active" data-name="Aisha" onclick="selectTrainer(this)">
+          <div class="avatar female"><div class="face"></div><div class="body"></div></div>
+          <b>Aisha</b><span>AI Trainer • Patient Coach</span>
+        </button>
+        <button class="trainer" data-name="Arjun" onclick="selectTrainer(this)">
+          <div class="avatar"><div class="face"></div><div class="body"></div></div>
+          <b>Arjun</b><span>AI Trainer • Practical Coach</span>
+        </button>
+      </div>
+
+      <div class="field"><label>OCCUPATION</label><select id="occupation"><option>Electrician</option><option>Plumber</option><option>Sales Professional</option><option>Banking Professional</option><option>Chef</option><option>Mechanic</option><option>IT Support</option><option>Hospitality Professional</option></select></div>
+      <div class="field"><label>COUNTRY / WORKPLACE</label><select id="country"><option>Germany</option><option>India</option><option>United Kingdom</option><option>United Arab Emirates</option><option>Canada</option><option>Australia</option></select></div>
+      <div class="field"><label>LEARNING LANGUAGE</label><select id="learnLang"><option>Hindi</option><option>English</option><option>Marathi</option><option>Bengali</option><option>Tamil</option></select></div>
+      <div class="field"><label>WORKPLACE LANGUAGE</label><select id="workLang"><option>German</option><option>English</option><option>Hindi</option><option>Marathi</option><option>French</option></select></div>
+
+      <h3 style="margin-top:20px">Reality scenario</h3>
+      <div class="scenarios">
+        <button class="chip active" onclick="scenario(this,'Customer conversation')">Customer conversation</button>
+        <button class="chip" onclick="scenario(this,'Safety briefing')">Safety briefing</button>
+        <button class="chip" onclick="scenario(this,'Workplace handover')">Workplace handover</button>
+        <button class="chip" onclick="scenario(this,'Job interview')">Job interview</button>
+      </div>
+      <div class="actions">
+        <button class="action" onclick="replay()">↻ Re-explain</button>
+        <button class="action primary" onclick="roleplay()">▶ Start role-play</button>
+      </div>
+      <div class="note"><b>AI disclosure:</b> Aisha and Arjun are AI trainers, not human trainers. Feedback is limited to observable training performance and is not a personality, intelligence, honesty, mental-state or employment decision.</div>
+    </aside>
+
+    <section class="panel chat">
+      <div class="chat-head">
+        <div class="trainer-mini">
+          <div class="mini"><div class="face"></div></div>
+          <div><b id="trainerName">Aisha</b><div style="font-size:11px;color:#738096">AI Trainer • <span id="scenarioName">Customer conversation</span></div></div>
+        </div>
+        <div class="status">● Ready</div>
+      </div>
+
+      <div class="messages" id="messages">
+        <div class="msg trainer-msg"><small>AISHA • AI TRAINER</small>Hello! I’ll train you step by step. First, tell me how you would greet a customer in a professional workplace.</div>
+        <div class="msg user-msg"><small>YOU</small>Hello, how can I help you today?</div>
+        <div class="msg trainer-msg"><small>AI FEEDBACK</small>Good start. Next, practise a short workplace greeting using the selected workplace language.</div>
+      </div>
+
+      <div class="quick">
+        <button onclick="sendQuick('Explain this again in simple words.')">Explain simply</button>
+        <button onclick="sendQuick('Show me an example.')">Show example</button>
+        <button onclick="sendQuick('Let me try the scenario.')">Let me try</button>
+        <button onclick="sendQuick('What should I improve?')">What should I improve?</button>
+      </div>
+
+      <div class="composer">
+        <input id="input" placeholder="Ask your AI trainer..." onkeydown="if(event.key==='Enter')send()">
+        <button onclick="send()">Send</button>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel feedback">
+    <h3>Practice feedback</h3>
+    <div class="metrics">
+      <div class="metric"><b id="m1">78%</b><span>Task completion</span></div>
+      <div class="metric"><b id="m2">4/5</b><span>Scenario steps completed</span></div>
+      <div class="metric"><b id="m3">2</b><span>Remediation items</span></div>
+    </div>
+    <div class="next" id="next">Next step: practise the workplace greeting once more, then continue to the customer conversation.</div>
+  </section>
+</main>
+
+<script>
+let trainer='Aisha', currentScenario='Customer conversation', messages=3;
+function selectTrainer(el){
+  document.querySelectorAll('.trainer').forEach(x=>x.classList.remove('active'));el.classList.add('active');
+  trainer=el.dataset.name;document.getElementById('trainerName').textContent=trainer;
+  addTrainer("I’m ready. I’ll adapt the explanation to your selected occupation, country and language.");
+}
+function scenario(el,name){
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));el.classList.add('active');
+  currentScenario=name;document.getElementById('scenarioName').textContent=name;
+  addTrainer("Scenario changed to “"+name+"”. Tell me how you would begin.");
+}
+function addTrainer(text){
+  const box=document.getElementById('messages');box.insertAdjacentHTML('beforeend','<div class="msg trainer-msg"><small>'+trainer.toUpperCase()+' • AI TRAINER</small>'+escapeHtml(text)+'</div>');box.scrollTop=box.scrollHeight;messages++;
+}
+function addUser(text){
+  const box=document.getElementById('messages');box.insertAdjacentHTML('beforeend','<div class="msg user-msg"><small>YOU</small>'+escapeHtml(text)+'</div>');box.scrollTop=box.scrollHeight;
+}
+function send(){
+  const i=document.getElementById('input');const v=i.value.trim();if(!v)return;
+  addUser(v);i.value='';
+  setTimeout(()=>addTrainer(reply(v)),250);
+}
+function sendQuick(v){document.getElementById('input').value=v;send()}
+function reply(v){
+  const s=v.toLowerCase();
+  if(s.includes('improve')) return "Focus on one observable step at a time: greeting, clarification, safe procedure and clear closing. I’ll practise the next step with you.";
+  if(s.includes('example')) return "Example: greet the customer, confirm the requirement, explain the next action clearly, and check that the customer understands.";
+  if(s.includes('simple')) return "Simple version: greet → understand → explain → act safely → confirm.";
+  if(s.includes('try')) return "Your turn. Start the "+currentScenario+" in one or two sentences. I’ll respond with training feedback.";
+  return "Good. Let’s continue the "+currentScenario+" practice. Try the next step and I’ll give you observable, task-focused feedback.";
+}
+function replay(){addTrainer("Re-explanation: "+document.getElementById('occupation').value+" training starts with a clear workplace greeting, understanding the task, following the relevant procedure and confirming the next action. Now you try.");}
+function roleplay(){
+  addTrainer("Role-play started. I am the customer/workplace participant. You are the "+document.getElementById('occupation').value+". Begin the "+currentScenario+".");
+  document.getElementById('next').textContent="Role-play active: complete the scenario in your own words. Feedback will focus on task steps and communication clarity.";
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+document.querySelectorAll('select').forEach(s=>s.addEventListener('change',()=>{
+  addTrainer("I’ve updated your learning setup. I’ll use "+document.getElementById('learnLang').value+" for learning and "+document.getElementById('workLang').value+" for workplace practice.");
+}));
+</script>
+</body>
+</html>
