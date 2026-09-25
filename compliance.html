@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WHYNZOJOBS — Global Compliance & Safety</title>
+<style>
+:root{--ink:#14213d;--muted:#68738a;--bg:#f5f7fc;--card:#fff;--line:#e4e8f1;--blue:#2563eb;--purple:#7c3aed;--green:#16a34a;--amber:#d97706;--red:#dc2626;--shadow:0 14px 40px #1e2b5015}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,select,input{font:inherit}button{cursor:pointer}
+header{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 4%;position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px}.mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed);display:grid;place-items:center;color:#fff}.tag{display:block;font-size:8px;color:#6b7280;letter-spacing:1.4px}.back{border:1px solid var(--line);background:#fff;padding:9px 12px;border-radius:10px;font-weight:800;font-size:11px}
+.wrap{width:min(1200px,92%);margin:27px auto 55px}.eyebrow{display:inline-flex;gap:7px;align-items:center;background:#eef2ff;color:#4f46e5;padding:7px 10px;border-radius:999px;font-size:10px;font-weight:900}.dot{width:6px;height:6px;background:#22c55e;border-radius:50%}h1{font-size:34px;letter-spacing:-1px;margin:10px 0 5px}.sub{color:var(--muted);font-size:12px;line-height:1.5;max-width:850px}
+.toolbar{margin-top:20px;display:flex;gap:8px;flex-wrap:wrap}.toolbar select,.toolbar input{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px;font-size:10px}.toolbar input{width:240px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:17px}.stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px;box-shadow:var(--shadow)}.stat b{font-size:21px}.stat span{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:17px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:17px}.panel h3{margin:0 0 12px;font-size:14px}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:10px}.row:last-child{border-bottom:0}.row small{display:block;color:var(--muted);margin-top:3px}.badge{padding:5px 7px;border-radius:7px;font-size:8px;font-weight:900;white-space:nowrap}.green{background:#dcfce7;color:#15803d}.amber{background:#fef3c7;color:#92400e}.red{background:#fee2e2;color:#991b1b}.blue{background:#dbeafe;color:#1d4ed8}
+.registry{margin-top:15px}.registry table{width:100%;border-collapse:collapse}.registry th,.registry td{text-align:left;padding:11px;border-bottom:1px solid var(--line);font-size:9px}.registry th{background:#fafbff;color:#667085;font-size:8px}.source{color:#2563eb;font-weight:800}.notice{margin-top:15px;padding:13px;border-radius:13px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;font-size:9px;line-height:1.55}
+@media(max-width:780px){.stats{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.registry{overflow:auto}.registry table{min-width:760px}}@media(max-width:520px){header{height:64px;padding:0 3%}.brand{font-size:17px}.wrap{width:94%;margin-top:20px}.toolbar input{width:100%}.stats{gap:7px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark">W</div><div>WHYNZO<span class="tag">GLOBAL COMPLIANCE & SAFETY</span></div></div><button class="back" onclick="location.href='admin.html'">← Admin Center</button></header>
+<main class="wrap">
+<div class="eyebrow"><span class="dot"></span> COMPLIANCE-BY-DESIGN</div>
+<h1>Safety, legal context and content governance.</h1>
+<div class="sub">Every country-specific training path should carry traceable requirements, authoritative sources, review dates and publishing status. This is a governance interface—not a substitute for local legal or professional review.</div>
+
+<div class="toolbar">
+<input id="search" placeholder="Search occupation, country or requirement..." oninput="render()">
+<select id="country" onchange="render()"><option>All countries</option><option>Germany</option><option>India</option><option>United Kingdom</option><option>United Arab Emirates</option><option>Canada</option><option>Australia</option></select>
+<select id="category" onchange="render()"><option>All categories</option><option>Licensing</option><option>Safety</option><option>Privacy</option><option>AI</option><option>Copyright</option></select>
+</div>
+
+<div class="stats"><div class="stat"><b id="total">8</b><span>Governance records</span></div><div class="stat"><b id="review">3</b><span>Need review</span></div><div class="stat"><b id="verified">3</b><span>Verified / configured</span></div><div class="stat"><b>0</b><span>Government licences issued</span></div></div>
+
+<div class="grid">
+<section class="panel"><h3>Publishing gates</h3>
+<div class="row"><div><b>AI trainer disclosure</b><small>Clearly identify AI trainers as AI.</small></div><span class="badge green">READY</span></div>
+<div class="row"><div><b>Training ≠ licence</b><small>Do not imply WHYNZO grants registration or legal authorization.</small></div><span class="badge green">READY</span></div>
+<div class="row"><div><b>Country legal source</b><small>Authoritative source + review date required.</small></div><span class="badge amber">REVIEW</span></div>
+<div class="row"><div><b>Safety-critical content</b><small>High-risk tasks require qualified/official guidance.</small></div><span class="badge amber">REVIEW</span></div>
+</section>
+<section class="panel"><h3>Privacy & AI safeguards</h3>
+<div class="row"><div><b>Camera consent</b><small>Opt-in; explain purpose and retention.</small></div><span class="badge amber">BACKEND</span></div>
+<div class="row"><div><b>Voice data minimization</b><small>Prefer local processing; minimize retention.</small></div><span class="badge amber">BACKEND</span></div>
+<div class="row"><div><b>Observable feedback</b><small>No personality, emotion, intelligence or mental-state inference.</small></div><span class="badge green">CONFIGURED</span></div>
+<div class="row"><div><b>Children / minors</b><small>Additional safeguards required before expansion.</small></div><span class="badge red">RESTRICT</span></div>
+</section>
+</div>
+
+<section class="panel registry"><h3>Requirement registry</h3>
+<table><thead><tr><th>PATH</th><th>COUNTRY</th><th>CATEGORY</th><th>STATUS</th><th>REVIEW DATE</th><th>SOURCE RECORD</th></tr></thead><tbody id="rows"></tbody></table>
+</section>
+<div class="notice"><b>Important governance rule:</b> this prototype must not invent or present country-specific licensing, qualification or safety requirements as verified facts. Before publication, each requirement needs an authoritative source, jurisdiction, effective/review date, scope, reviewer and evidence record. Legal review may be required for high-risk jurisdictions or regulated occupations.</div>
+</main>
+<script>
+const records=[
+['Electrician pathway','Germany','Licensing','Review','Pending','Official authority required'],
+['Electrician safety','Germany','Safety','Review','Pending','Official safety source required'],
+['Plumber pathway','India','Licensing','Review','Pending','Official authority required'],
+['Camera practice','Global','Privacy','Backend','Pending','Privacy policy + consent record'],
+['Voice trainer','Global','AI','Configured','2026-09','AI disclosure + data minimization'],
+['AI assessment','Global','AI','Configured','2026-09','Observable metrics only'],
+['Training media','Global','Copyright','Review','Pending','Licence/provenance record required'],
+['Learner accounts','Global','Privacy','Review','Pending','Privacy + retention review']
+];
+function render(){
+ const q=document.getElementById('search').value.toLowerCase(),c=document.getElementById('country').value,cat=document.getElementById('category').value;
+ const out=records.filter(r=>(!q||r.join(' ').toLowerCase().includes(q))&&(c==='All countries'||r[1]===c)&&(cat==='All categories'||r[2]===cat));
+ document.getElementById('rows').innerHTML=out.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="badge ${r[3]==='Configured'?'green':r[3]==='Review'?'amber':'blue'}">${r[3].toUpperCase()}</span></td><td>${r[4]}</td><td class="source">${r[5]}</td></tr>`).join('');
+ document.getElementById('total').textContent=out.length;
+ document.getElementById('review').textContent=out.filter(r=>r[3]==='Review').length;
+ document.getElementById('verified').textContent=out.filter(r=>r[3]==='Configured').length;
+}
+render();
+</script>
+</body>
+</html>
