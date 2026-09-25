@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<!-- WHYNZOJOBS V7 Premium Visual Experience -->
+<!-- WHYNZOJOBS V8 Premium Visual Experience -->
 <title>WHYNZOJOBS — Your Global Skill Training Partner</title>
 <style>
 :root{--navy:#061a3a;--blue:#087cff;--cyan:#15d4ff;--purple:#7a3ff2;--ink:#08244d;--muted:#61718b;--bg:#f5f9ff;--line:#dbe6f5}
@@ -116,6 +116,179 @@ footer{background:#06152f;color:#9fb4d3;padding:25px 0;font-size:12px}.foot{disp
 }
 </style>
 
+
+<style id="whynzo-v8-refinement">
+/* ================= V8 PREMIUM COMPOSITION ================= */
+.header .logo img,.logo img{height:42px!important;max-width:180px!important}
+.hero{overflow:hidden}
+.hero .container{position:relative;z-index:4}
+.heroVisual{
+  min-height:570px!important;
+  margin-top:4px!important;
+  overflow:hidden!important;
+  border-radius:0 0 34px 34px!important;
+}
+.heroVisual:before{
+  content:"";
+  position:absolute;inset:8% 10% 5%;
+  background:radial-gradient(circle at 50% 48%,rgba(30,189,255,.20),transparent 48%);
+  z-index:2;pointer-events:none;
+}
+.heroVisual .trainerStage{z-index:15!important}
+.heroVisual .trainerCard{
+  width:142px!important;height:205px!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.20),rgba(255,255,255,.05))!important;
+  box-shadow:0 22px 55px rgba(0,10,40,.42)!important;
+}
+.heroVisual .trainerCard.left{left:2%!important;top:115px!important;transform:rotate(-5deg)!important}
+.heroVisual .trainerCard.right{right:2%!important;top:105px!important;transform:rotate(5deg)!important}
+.heroVisual .trainerCard .trainerLabel{font-size:8px!important}
+.heroVisual .heroCenter{
+  width:330px!important;height:330px!important;
+  top:58%!important;z-index:8!important;
+}
+.heroVisual .heroBadge{
+  z-index:30!important;
+  font-size:9px!important;
+  padding:8px 10px!important;
+}
+.heroVisual .heroBadge.one{left:7%!important;top:52%!important}
+.heroVisual .heroBadge.two{right:5%!important;top:52%!important}
+.heroVisual .heroBadge.three{right:10%!important;bottom:7%!important}
+.heroVisual .city{z-index:12!important}
+.heroVisual .globe{z-index:7!important}
+.heroVisual .orbit{z-index:10!important}
+
+/* Keep the hero micro journey clean; trust strip goes below it. */
+.hero .v7Trust{margin:4px 0 0!important;justify-content:flex-start!important}
+.hero .micro .v7Trust{display:none!important}
+.v7Trust{
+  max-width:850px!important;
+  margin:12px 0 0!important;
+  gap:7px!important;
+}
+.v7Trust span{
+  font-size:9px!important;
+  padding:6px 9px!important;
+}
+
+/* Occupation cards: consistent premium tiles */
+.skills .skillGrid,.skillGrid{
+  gap:10px!important;
+}
+.skillCard,.skill{
+  border-radius:16px!important;
+  box-shadow:0 8px 22px rgba(16,48,86,.07)!important;
+  transition:transform .22s ease,box-shadow .22s ease!important;
+}
+.skillCard:hover,.skill:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 14px 28px rgba(16,48,86,.12)!important;
+}
+.skillPic{
+  border-radius:12px!important;
+}
+
+/* AI trainer: larger, cleaner presentation */
+.aiPerson{
+  min-height:285px!important;
+  border-radius:22px 0 0 22px!important;
+}
+.aiPerson .trainerPortrait{
+  width:220px!important;height:250px!important;
+  filter:drop-shadow(0 20px 30px rgba(0,0,0,.24));
+}
+
+/* Scenarios get a cleaner visual frame */
+.scenario{
+  border-radius:16px!important;
+  overflow:hidden!important;
+  box-shadow:0 7px 20px rgba(16,48,86,.07)!important;
+}
+.scenario .scene{
+  background:linear-gradient(135deg,#dff6ff,#eee5ff)!important;
+}
+
+/* Journey section hierarchy */
+.journey{
+  box-shadow:0 18px 45px rgba(2,30,70,.16)!important;
+}
+
+/* Footer readability */
+footer{font-size:10px!important}
+
+/* ================= MOBILE ================= */
+@media(max-width:800px){
+  .header .logo img,.logo img{height:39px!important;max-width:165px!important}
+  .heroVisual{
+    min-height:520px!important;
+    border-radius:0 0 26px 26px!important;
+  }
+  .heroVisual .trainerCard{
+    width:105px!important;height:154px!important;
+    border-radius:21px!important;
+  }
+  .heroVisual .trainerCard.left{
+    left:1%!important;top:98px!important;
+  }
+  .heroVisual .trainerCard.right{
+    right:1%!important;top:92px!important;
+  }
+  .heroVisual .heroCenter{
+    width:235px!important;height:235px!important;
+    top:57%!important;
+  }
+  .heroVisual .heroBadge.one{
+    left:0!important;top:42%!important;
+  }
+  .heroVisual .heroBadge.two{
+    right:0!important;top:43%!important;
+  }
+  .heroVisual .heroBadge.three{
+    right:4%!important;bottom:5%!important;
+  }
+  .heroVisual .heroBadge{
+    font-size:7.5px!important;
+    padding:6px 8px!important;
+  }
+  .heroVisual .trainerCard .trainerLabel{
+    font-size:6.5px!important;
+    padding:5px!important;
+  }
+  .hero .micro{
+    flex-wrap:wrap!important;
+    gap:7px!important;
+  }
+  .hero .micro>div{
+    min-width:45px!important;
+  }
+  .v7Trust{
+    margin-top:10px!important;
+    gap:5px!important;
+  }
+  .v7Trust span{
+    font-size:7.5px!important;
+    padding:5px 7px!important;
+  }
+  .aiPerson{
+    min-height:245px!important;
+    border-radius:20px 20px 0 0!important;
+  }
+  .aiPerson .trainerPortrait{
+    width:185px!important;height:210px!important;
+  }
+  .scenario .scene{height:105px!important}
+}
+
+/* Extra-small phones */
+@media(max-width:390px){
+  .heroVisual{min-height:500px!important}
+  .heroVisual .trainerCard{width:94px!important;height:143px!important}
+  .heroVisual .heroCenter{width:215px!important;height:215px!important}
+  .heroVisual .heroBadge{font-size:7px!important}
+}
+</style>
+
 </head>
 <body>
 <header><div class="wrap nav">
@@ -126,7 +299,7 @@ footer{background:#06152f;color:#9fb4d3;padding:25px 0;font-size:12px}.foot{disp
 <section class="hero" id="home"><div class="wrap heroGrid">
 <div class="heroCopy reveal"><div class="eyebrow"><i class="dot"></i> GLOBAL AI-POWERED OCCUPATIONAL TRAINING</div><h1>Your <span>Global</span><br>Skill Training<br><span>Partner.</span></h1><div class="heroSub">Learn from Real-Like AI Trainers for <b>Any Skill, Any Job, Any Country.</b></div>
 <div class="heroBtns"><a class="btn primary" href="#trainer">Start Learning Free →</a><a class="btn ghost" href="#how">▶ Watch How It Works</a></div>
-<div class="micro"><div>🗣️ <b>Talk</b>with AI Trainers</div><div class="v7Trust"><span>AI clearly disclosed</span><span>Practical skill evidence</span><span>Global & multilingual</span><span>Privacy by design</span></div><div>▶ <b>Watch</b>Real Demonstrations</div><div>⚙ <b>Practice</b>Real Scenarios</div><div>✓ <b>Improve</b>with Feedback</div><div>🎓 <b>Grow</b>Job-Ready Skills</div></div></div>
+<div class="micro"><div>🗣️ <b>Talk</b>with AI Trainers</div><div>▶ <b>Watch</b>Real Demonstrations</div><div>⚙ <b>Practice</b>Real Scenarios</div><div>✓ <b>Improve</b>with Feedback</div><div>🎓 <b>Grow</b>Job-Ready Skills</div></div></div>
 <div class="heroVisual"><div class="trainerStage">
   <div class="trainerCard left"><svg class="humanSvg" viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg" aria-label="Original AI trainer illustration">
 <defs>
@@ -167,7 +340,7 @@ footer{background:#06152f;color:#9fb4d3;padding:25px 0;font-size:12px}.foot{disp
   <div class="heroBadge three">💬 Learn • Practice • Prove</div>
 </div><div class="glow"></div><div style="position:absolute;z-index:6;top:28px;left:8%;padding:9px 13px;border-radius:20px;background:#ffffff18;border:1px solid #ffffff3d;color:#dffaff;font-size:11px;font-weight:900;backdrop-filter:blur(8px)">🌍 GLOBAL LEARNING</div><div class="globe"></div><div class="orbit"><i></i></div><div class="trainerOrb"></div><div class="floatCard fc1">👩‍🏫 Hi! I'm Aisha<br><small>Your AI Trainer.</small></div><div class="floatCard fc2">🌍 Any Skill<br>Any Country<br>A Brighter You</div><div class="floatCard fc3">🤖 AI Trainers • 24/7</div><div class="heroStats"><div><b>200+</b><span>Occupations</span></div><div><b>50+</b><span>Countries</span></div><div><b>20+</b><span>Languages</span></div><div><b>24/7</b><span>AI Trainers</span></div><div><b>1M+</b><span>Learners Goal</span></div></div><div class="city"></div></div>
 </div></section>
-<section class="section reveal" id="skills"><div class="wrap"><div class="titleRow"><h2>Choose Your Skill</h2><a class="view" href="#">View All →</a></div><div class="chips"><span class="chip active">All</span><span class="chip">♙ Business</span><span class="chip">⚕ Healthcare</span><span class="chip">▣ IT & Tech</span><span class="chip">⚒ Skilled Trades</span><span class="chip">♨ Hospitality</span><span class="chip">▣ Transport</span><span class="chip">▤ Government</span><span class="chip">◉ Beauty & Wellness</span><span class="chip">More</span></div>
+<div class="v7Trust v8Trust"><span>AI clearly disclosed</span><span>Practical skill evidence</span><span>Global & multilingual</span><span>Privacy by design</span></div><section class="section reveal" id="skills"><div class="wrap"><div class="titleRow"><h2>Choose Your Skill</h2><a class="view" href="#">View All →</a></div><div class="chips"><span class="chip active">All</span><span class="chip">♙ Business</span><span class="chip">⚕ Healthcare</span><span class="chip">▣ IT & Tech</span><span class="chip">⚒ Skilled Trades</span><span class="chip">♨ Hospitality</span><span class="chip">▣ Transport</span><span class="chip">▤ Government</span><span class="chip">◉ Beauty & Wellness</span><span class="chip">More</span></div>
 <div class="skills"><div class="skill"><div class="skillPic"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="28" width="40" height="30" rx="4" fill="#7a55d9"/><path d="M28 28v-7h24v7" fill="none" stroke="#1c3e67" stroke-width="5"/><path d="M28 40h24" stroke="#fff" stroke-width="4"/></svg></div><b>Sales</b></div><div class="skill"><div class="skillPic"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="23" fill="#fff"/><path d="M28 43c4-19 21-19 25 0v15H28z" fill="#1a9bd1"/><path d="M21 37h8M51 37h8M40 17v8" stroke="#1a9bd1" stroke-width="5" stroke-linecap="round"/></svg></div><b>Healthcare</b></div><div class="skill"><div class="skillPic"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="17" y="18" width="46" height="33" rx="4" fill="#1e3c65"/><rect x="22" y="23" width="36" height="23" fill="#9eeaff"/><path d="M28 58h24M40 51v7" stroke="#1e3c65" stroke-width="5" stroke-linecap="round"/></svg></div><b>IT Support</b></div><div class="skill"><div class="skillPic"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="31" width="50" height="25" rx="12" fill="#ef4f5f"/><circle cx="27" cy="57" r="7" fill="#1c3558"/><circle cx="54" cy="57" r="7" fill="#1c3558"/><path d="M24 31l7-13h19l8 13" fill="#ff6c7b"/></svg></div><b>Driver</b></div><div class="skill"><div class="skillPic"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M23 22l16 16M57 22L41 38M40 37v25" stroke="#1d86e8" stroke-width="9" stroke-linecap="round"/><path d="M23 22l-6 6M57 22l6 6" stroke="#7a55d9" stroke-width="5"/></svg></div><b>Plumber</b></div><div class="skill"><div class="skillPic"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><path d="M43 10L22 43h15l-4 27 25-38H43z" fill="#ffd34e" stroke="#1689ff" stroke-width="3"/></svg></div><b>Electrician</b></div><div class="skill"><div class="skillPic">👨‍🍳</div><b>Chef</b></div><div class="skill"><div class="skillPic">🏗️</div><b>Construction</b></div><div class="skill"><div class="skillPic">📊</div><b>Accounting</b></div><div class="skill"><div class="skillPic">💇</div><b>Beauty & Wellness</b></div><div class="skill"><div class="skillPic">🏨</div><b>Hospitality</b></div><div class="skill"><div class="skillPic">🌾</div><b>Agriculture</b></div></div></div></section>
 <section class="section reveal" id="countries"><div class="wrap how"><div><div class="titleRow"><h2>Choose Your Country</h2><a class="view" href="#">View All →</a></div><div class="countryGrid"><div class="country"><span class="flag">🇺🇸</span>USA</div><div class="country"><span class="flag">🇨🇦</span>Canada</div><div class="country"><span class="flag">🇬🇧</span>UK</div><div class="country"><span class="flag">🇩🇪</span>Germany</div><div class="country"><span class="flag">🇦🇺</span>Australia</div><div class="country"><span class="flag">🇦🇪</span>UAE</div><div class="country"><span class="flag">🇸🇬</span>Singapore</div></div></div>
 <div><div class="titleRow"><h2>How It Works</h2></div><div class="steps"><div class="step"><span class="num">1</span><h3>Choose Your Skill</h3><p>Select an occupation and level.</p></div><div class="step"><span class="num">2</span><h3>Talk with AI Trainer</h3><p>Learn interactively.</p></div><div class="step"><span class="num">3</span><h3>Watch Demonstrations</h3><p>See practical examples.</p></div><div class="step"><span class="num">4</span><h3>Practice Real Scenarios</h3><p>Handle workplace tasks.</p></div><div class="step"><span class="num">5</span><h3>Get Feedback & Improve</h3><p>Target weak areas.</p></div><div class="step"><span class="num">6</span><h3>Be Job Ready</h3><p>Build observable skill evidence.</p></div></div></div></div></section>
